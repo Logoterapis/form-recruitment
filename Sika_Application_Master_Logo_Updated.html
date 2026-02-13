@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="id"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6IjY0ZjA3ZDcxOTc5ZjQzODI3MjJhOGRmMzQwNzUzY2UwZmVkOThjYTgiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIwOTEyMTgwOTkxMTE0OTA4NDEzMyIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjXzUzNzllNzMxNGIwYzg5NDZfU2lrYV9BcHBsaWNhdGlvbl9GaW5hbF9JbmRvX0ZpeC5odG1sLTM1In0sImV4cCI6MTc3MDk5NDU2OCwiaWF0IjoxNzcwOTkwOTY4LCJhbGciOiJSUzI1NiJ9.md6dQvlVmGBToxaKJKQXuS5bOwChjVEdA4Y5zgY049qAYbWkIY3slprMfpMzaT593ShhSCWZhPEBA_Kd2tdom95AhykJZfpvA-0hZ8jROmsWouk_-jciWp2FVLqfR2KtnhKfDEn-ZkT6v7Wfx07r7BmgDl84p0frhZdo2xlxhsjiZt1ljFVQdNxGm8tvtF3j7Mem9iDuQt07Mn2JirPUrte14SDyKp3op1NR15_6oQgyVpzKlh1lPwqz_cQtrMpXeJ80NRRcrHCQftSxZVOp5-46K5x_GtgHRTuqEoM9nvFktMjK2yAC27B0Co_2w_XQx99PSGeg1zEeSkvArxt98A","c_5379e7314b0c8946_Sika_Application_Final_Indo_Fix.html-35")</script><script>'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-2.5-flash-preview-09-2025","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
+</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sika Employment Application</title>
+    <!-- Tailwind CSS (CDN Version - Safe for Single File Apps) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Sika Colors */
+        :root {
+            --sika-yellow: #FFC500;
+            --sika-red: #E30613;
+            --sika-black: #000000;
+        }
+        
+        /* Mobile Optimization */
+        html { -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+        input, select, textarea { font-size: 16px !important; border-radius: 8px; }
+        input[type="date"] { -webkit-appearance: none; min-height: 44px; }
+
+        .bg-sika-yellow { background-color: var(--sika-yellow); }
+        .text-sika-red { color: var(--sika-red); }
+        .bg-sika-red { background-color: var(--sika-red); }
+        .border-sika-yellow { border-color: var(--sika-yellow); }
+        
+        /* Animations */
+        .step-content { display: none; animation: fadeIn 0.4s; }
+        .step-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Photo Upload Preview */
+        .photo-upload-box {
+            width: 120px; height: 150px;
+            border: 2px dashed #ccc;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; background: #f9f9f9; position: relative;
+        }
+        .photo-upload-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Fallback Logo Style */
+        .sika-text-logo {
+            display: none; background-color: var(--sika-yellow); color: black;
+            font-weight: 900; padding: 5px 15px; font-family: Arial, sans-serif;
+            letter-spacing: -1px; border-radius: 4px;
+        }
+
+        /* PDF Hidden Template Styling */
+        #pdf-template {
+            display: none; font-family: Arial, sans-serif; font-size: 11px;
+            color: #000; line-height: 1.3; width: 210mm; padding: 10px;
+        }
+        .pdf-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; font-size: 10px; }
+        .pdf-table th, .pdf-table td { border: 1px solid #999; padding: 3px 5px; text-align: left; }
+        .pdf-header-sect { 
+            background-color: #f0f0f0; font-weight: bold; 
+            border-bottom: 2px solid var(--sika-red); margin-top: 10px;
+            padding: 2px; text-transform: uppercase; font-size: 11px;
+        }
+        .q-label { font-weight: bold; margin-top: 5px; display: block; }
+        
+        /* Checkbox Custom Style */
+        .custom-checkbox {
+            accent-color: var(--sika-red); width: 22px; height: 22px;
+            flex-shrink: 0; margin-top: 2px; cursor: pointer;
+        }
+        .consent-box {
+            background-color: #fff; border: 1px solid #ddd; padding: 12px;
+            border-radius: 8px; display: flex; align-items: flex-start;
+            gap: 10px; transition: all 0.2s;
+        }
+        .consent-box:active { background-color: #f0f0f0; }
+
+        /* Helper for hidden inputs */
+        .hidden-input { display: none; }
+        .hidden-input.show { display: block; }
+
+        /* Admin Setup Panel */
+        #setup-panel {
+            border: 2px dashed #ccc; padding: 15px; margin-top: 20px;
+            border-radius: 8px; background: #fdfdfd; font-size: 12px; text-align: left;
+        }
+        .code-block {
+            background: #f1f1f1; padding: 10px; border-radius: 5px;
+            font-family: monospace; font-size: 11px; color: #333;
+            width: 100%; height: 80px; margin-top: 5px; border: 1px solid #ccc;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.bottom-0{bottom:0px}.left-0{left:0px}.right-0{right:0px}.right-3{right:0.75rem}.right-4{right:1rem}.top-0{top:0px}.top-3{top:0.75rem}.top-4{top:1rem}.z-40{z-index:40}.z-50{z-index:50}.z-\[100\]{z-index:100}.z-\[120\]{z-index:120}.col-span-1{grid-column:span 1 / span 1}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-1{margin-top:0.25rem}.mt-10{margin-top:2.5rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-1\.5{height:0.375rem}.h-16{height:4rem}.h-2{height:0.5rem}.h-24{height:6rem}.h-8{height:2rem}.max-h-\[80vh\]{max-height:80vh}.min-h-screen{min-height:100vh}.min-h-\[500px\]{min-height:500px}.w-1\/3{width:33.333333%}.w-1\/4{width:25%}.w-10{width:2.5rem}.w-16{width:4rem}.w-20{width:5rem}.w-24{width:6rem}.w-28{width:7rem}.w-8{width:2rem}.w-full{width:100%}.min-w-\[500px\]{min-width:500px}.min-w-\[600px\]{min-width:600px}.min-w-\[700px\]{min-width:700px}.max-w-5xl{max-width:64rem}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.flex-1{flex:1 1 0%}.flex-\[1\]{flex:1}.flex-\[2\]{flex:2}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.list-decimal{list-style-type:decimal}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.self-end{align-self:flex-end}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-l-2{border-left-width:2px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-blue-200{--tw-border-opacity:1;border-color:rgb(191 219 254 / var(--tw-border-opacity, 1))}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-yellow-200{--tw-border-opacity:1;border-color:rgb(254 240 138 / var(--tw-border-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-yellow-50{--tw-bg-opacity:1;background-color:rgb(254 252 232 / var(--tw-bg-opacity, 1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.bg-opacity-0{--tw-bg-opacity:0}.bg-opacity-50{--tw-bg-opacity:0.5}.bg-opacity-80{--tw-bg-opacity:0.8}.object-contain{object-fit:contain}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pb-1{padding-bottom:0.25rem}.pb-2{padding-bottom:0.5rem}.pb-32{padding-bottom:8rem}.pb-4{padding-bottom:1rem}.pb-6{padding-bottom:1.5rem}.pl-3{padding-left:0.75rem}.pl-5{padding-left:1.25rem}.pt-3{padding-top:0.75rem}.text-left{text-align:left}.text-center{text-align:center}.font-sans{font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-snug{line-height:1.375}.leading-tight{line-height:1.25}.tracking-wider{letter-spacing:0.05em}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-blue-800{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-transparent{color:transparent}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[0_-4px_6px_-1px_rgba\(0\2c 0\2c 0\2c 0\.1\)\]{--tw-shadow:0 -4px 6px -1px rgba(0,0,0,0.1);--tw-shadow-colored:0 -4px 6px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-300:hover{--tw-bg-opacity:1;background-color:rgb(209 213 219 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-50:hover{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-900:hover{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.hover\:bg-red-700:hover{--tw-bg-opacity:1;background-color:rgb(185 28 28 / var(--tw-bg-opacity, 1))}.hover\:bg-yellow-400:hover{--tw-bg-opacity:1;background-color:rgb(250 204 21 / var(--tw-bg-opacity, 1))}.hover\:text-gray-600:hover{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.hover\:text-red-700:hover{--tw-text-opacity:1;color:rgb(185 28 28 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.focus\:border-yellow-400:focus{--tw-border-opacity:1;border-color:rgb(250 204 21 / var(--tw-border-opacity, 1))}.focus\:ring-yellow-400:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(250 204 21 / var(--tw-ring-opacity, 1))}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.active\:bg-gray-200:active{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.active\:bg-gray-300:active{--tw-bg-opacity:1;background-color:rgb(209 213 219 / var(--tw-bg-opacity, 1))}.active\:bg-yellow-500:active{--tw-bg-opacity:1;background-color:rgb(234 179 8 / var(--tw-bg-opacity, 1))}.disabled\:cursor-not-allowed:disabled{cursor:not-allowed}.disabled\:opacity-50:disabled{opacity:0.5}.group:hover .group-hover\:bg-opacity-20{--tw-bg-opacity:0.2}.group:hover .group-hover\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:flex-row{flex-direction:row}.sm\:text-left{text-align:left}}@media (min-width: 768px){.md\:relative{position:relative}.md\:col-span-2{grid-column:span 2 / span 2}.md\:mt-6{margin-top:1.5rem}.md\:block{display:block}.md\:h-10{height:2.5rem}.md\:w-1\/3{width:33.333333%}.md\:w-auto{width:auto}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:self-auto{align-self:auto}.md\:rounded-b-xl{border-bottom-right-radius:0.75rem;border-bottom-left-radius:0.75rem}.md\:rounded-t-xl{border-top-left-radius:0.75rem;border-top-right-radius:0.75rem}.md\:border-0{border-width:0px}.md\:bg-transparent{background-color:transparent}.md\:p-0{padding:0px}.md\:p-6{padding:1.5rem}.md\:p-8{padding:2rem}.md\:pb-0{padding-bottom:0px}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}.md\:text-xs{font-size:0.75rem;line-height:1rem}.md\:shadow-none{--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}}</style></head>
+<body class="bg-gray-100 min-h-screen font-sans safe-area-padding">
+
+    <!-- LANGUAGE SELECTION (Welcome Page) -->
+    <div id="welcome-screen" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center p-4 overflow-y-auto">
+        <div class="max-w-md w-full text-center mt-10 mb-10">
+            <!-- Logo Sika Display -->
+            <div class="mb-8 flex justify-center items-center flex-col relative group">
+                <img id="welcome-logo-img" src="data:image/jpeg;base64,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" alt="Sika Logo" class="h-24 object-contain mb-2" crossorigin="anonymous" style="display: block;">
+                <div id="welcome-fallback-logo" class="sika-text-logo text-4xl mb-2" style="display: none;">SIKA</div>
+            </div>
+            
+            <h1 class="text-2xl font-bold mb-2">Selamat Datang / Welcome</h1>
+            <p class="text-gray-600 mb-8">Silakan pilih bahasa untuk melanjutkan.<br>Please select a language to proceed.</p>
+            
+            <div class="space-y-3 mb-8">
+                <button onclick="setLanguage('id')" class="w-full bg-sika-yellow text-black font-bold py-4 px-6 rounded-xl shadow-lg hover:bg-yellow-400 transition transform hover:scale-105 flex items-center justify-center gap-3 active:scale-95">
+                    <span class="text-2xl">🇮🇩</span> Bahasa Indonesia
+                </button>
+                <button onclick="setLanguage('en')" class="w-full bg-gray-800 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:bg-gray-900 transition transform hover:scale-105 flex items-center justify-center gap-3 active:scale-95">
+                    <span class="text-2xl">🇬🇧</span> English
+                </button>
+            </div>
+            <p class="mt-8 text-xs text-gray-400">Optimized for iPhone &amp; Android</p>
+
+            <!-- SETUP PANEL (For HR/Admin) -->
+            
+        </div>
+    </div>
+
+    <!-- MAIN APP CONTAINER -->
+    <div id="app-container" class="max-w-5xl mx-auto md:p-6 hidden pb-32">
+        <!-- Header -->
+        <div class="bg-white md:rounded-t-xl shadow-lg overflow-hidden sticky top-0 z-40">
+            <div class="bg-sika-yellow h-2"></div>
+            <div class="p-4 flex flex-col md:flex-row justify-between items-center border-b border-gray-100 gap-3">
+                <div class="flex items-center gap-3 w-full md:w-auto">
+                    <img id="header-logo-img" src="data:image/jpeg;base64,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" alt="Sika Logo" class="h-8 md:h-10 object-contain" crossorigin="anonymous" style="display: block;">
+                    <div id="header-fallback-logo" class="sika-text-logo text-xl" style="display: none;">SIKA</div>
+                    <div class="pl-3 border-l-2 border-gray-200 leading-tight">
+                        <h1 class="text-sm md:text-xl font-bold text-gray-800" data-key="title">Aplikasi Calon Karyawan</h1>
+                        <p class="text-[10px] md:text-xs text-gray-500" data-key="subtitle">Formulir Digital Resmi</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 self-end md:self-auto">
+                    <button type="button" onclick="showInstructions()" class="text-blue-600 text-sm hover:underline flex items-center gap-1">
+                        <i class="fas fa-info-circle"></i> <span data-key="help_btn">Petunjuk</span>
+                    </button>
+                </div>
+            </div>
+            <div class="bg-gray-50 px-4 py-2">
+                <div class="flex justify-between text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-1" id="progress-labels"></div>
+                <div class="w-full bg-gray-200 rounded-full h-1.5"><div id="progress-bar" class="bg-sika-red h-1.5 rounded-full transition-all duration-300" style="width: 0%"></div></div>
+            </div>
+        </div>
+
+        <!-- Form -->
+        <form id="employeeForm" class="bg-white md:rounded-b-xl shadow-lg p-4 md:p-8 min-h-[500px] mb-10">
+            <!-- BAB 1 -->
+            <div id="step-1" class="step-content active">
+                <h2 class="text-lg font-bold text-sika-red mb-4 border-b pb-2 uppercase flex items-center gap-2">
+                    <i class="fas fa-user-circle"></i> <span data-key="step1_title">I. Data Pribadi</span>
+                </h2>
+                <div class="mb-6 bg-yellow-50 p-4 rounded-lg border border-yellow-200 flex flex-col items-center sm:flex-row gap-4">
+                    <div class="photo-upload-box bg-white shadow-sm rounded relative group cursor-pointer" onclick="document.getElementById('applicant-photo').click()">
+                        <img id="photo-preview-img" src="https://via.placeholder.com/120x150?text=FOTO" alt="Pas Foto">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition flex items-center justify-center">
+                            <i class="fas fa-camera text-transparent group-hover:text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex-1 text-center sm:text-left">
+                        <label class="block text-sm font-bold text-gray-800 mb-1" data-key="label_photo">Upload Pas Foto (Wajib)</label>
+                        <p class="text-xs text-gray-500 mb-2">Format: JPG/PNG. Wajah terlihat jelas.</p>
+                        <input type="file" id="applicant-photo" accept="image/*" class="hidden" onchange="previewPhoto(this)">
+                        <button type="button" onclick="document.getElementById('applicant-photo').click()" class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded text-sm font-medium shadow-sm hover:bg-gray-50 active:bg-gray-200" id="btn-photo">
+                            <i class="fas fa-upload"></i> <span data-key="btn_upload_photo">Pilih Foto</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="col-span-1 md:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700 mb-1"><span data-key="label_position">Jabatan Dilamar</span> <span class="text-red-500">*</span></label>
+                        <input type="text" name="jabatan" class="w-full border-gray-300 rounded-lg shadow-sm border p-3 focus:ring-yellow-400 focus:border-yellow-400" required="">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1"><span data-key="label_name">Nama Lengkap</span> <span class="text-red-500">*</span></label>
+                        <input type="text" name="nama" class="w-full border-gray-300 rounded-lg shadow-sm border p-3" required="">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1"><span data-key="label_gender">Jenis Kelamin</span> <span class="text-red-500">*</span></label>
+                        <select name="gender" id="gender-select" class="w-full border-gray-300 rounded-lg shadow-sm border p-3 bg-white" required=""><option value="Pria">Pria</option><option value="Wanita">Wanita</option></select>
+                    </div>
+                    <div class="col-span-1 md:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700 mb-1"><span data-key="label_address">Alamat Lengkap</span> <span class="text-red-500">*</span></label>
+                        <textarea name="alamat" rows="3" class="w-full border-gray-300 rounded-lg shadow-sm border p-3" required=""></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1"><span data-key="label_pob">Tempat Lahir</span> <span class="text-red-500">*</span></label>
+                        <input type="text" name="tempat_lahir" class="w-full border-gray-300 rounded-lg shadow-sm border p-3" required="">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1"><span data-key="label_dob">Tanggal Lahir</span> <span class="text-red-500">*</span></label>
+                        <input type="date" name="tgl_lahir" class="w-full border-gray-300 rounded-lg shadow-sm border p-3 bg-white" required="">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1"><span data-key="label_phone">Telepon/WA</span> <span class="text-red-500">*</span></label>
+                        <input type="number" name="telepon" class="w-full border-gray-300 rounded-lg shadow-sm border p-3" required="">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1"><span data-key="label_email">Email</span> <span class="text-red-500">*</span></label>
+                        <input type="email" name="email" class="w-full border-gray-300 rounded-lg shadow-sm border p-3" required="">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1" data-key="label_religion">Agama</label>
+                        <select name="agama_select" onchange="toggleReligion(this)" class="w-full border-gray-300 rounded-lg shadow-sm border p-3 bg-white mb-2">
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katolik">Katolik</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Buddha">Buddha</option>
+                            <option value="Khonghucu">Khonghucu</option>
+                            <option value="Lainnya">Lainnya / Other</option>
+                        </select>
+                        <input type="text" name="agama_lain" id="agama_lain" class="w-full border-gray-300 rounded-lg shadow-sm border p-3 hidden-input" placeholder="Tulis agama lainnya...">
+                        <input type="hidden" name="agama" id="agama_final" value="Islam">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1" data-key="label_marital">Status Perkawinan</label>
+                        <select name="status_kawin" id="marital-select" class="w-full border-gray-300 rounded-lg shadow-sm border p-3 bg-white"><option value="Belum Kawin">Belum Kawin</option><option value="Kawin">Kawin</option><option value="Cerai">Cerai</option></select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1"><span data-key="label_idcard">No. KTP</span> <span class="text-red-500">*</span></label>
+                        <input type="number" name="ktp" class="w-full border-gray-300 rounded-lg shadow-sm border p-3" required="">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1" data-key="label_sim">No. SIM</label>
+                        <input type="number" name="sim" class="w-full border-gray-300 rounded-lg shadow-sm border p-3">
+                    </div>
+                </div>
+            </div>
+
+            <!-- BAB 2-5 (Standard Tables) -->
+            <div id="step-2" class="step-content">
+                <h2 class="text-lg font-bold text-sika-red mb-4 border-b pb-2 uppercase flex items-center gap-2"><i class="fas fa-users"></i> <span data-key="step2_title">II. Data Keluarga</span></h2>
+                <h3 class="text-sm font-bold bg-gray-100 p-2 rounded mb-2 text-gray-700" data-key="sub_spouse">A. Istri / Suami / Anak</h3>
+                <div class="overflow-x-auto mb-6 pb-2"><table class="w-full text-sm text-left border min-w-[500px]" id="table-pasangan"><thead class="bg-gray-50 border-b"><tr><th class="p-3 w-1/3" data-key="th_name">Nama</th><th class="p-3" data-key="th_rel">Hubungan</th><th class="p-3" data-key="th_dob">Tgl Lahir</th><th class="p-3 w-28" data-key="th_sex">Jenis Kelamin</th><th class="p-3" data-key="th_edu">Pendidikan</th><th class="p-3 w-10"></th></tr></thead><tbody><tr><td><input class="w-full border p-2 rounded" name="fam_name[]"></td><td><select class="w-full border p-2 rounded" name="fam_rel[]"><option value="Suami">Suami / Husband</option><option value="Istri">Istri / Wife</option><option value="Anak">Anak / Child</option></select></td><td><input type="date" class="w-full border p-2 rounded bg-white" name="fam_dob[]"></td><td><select class="w-full border p-2 rounded bg-white" name="fam_sex[]"><option>Pria</option><option>Wanita</option></select></td><td><select class="w-full border p-2 rounded" name="fam_edu[]"><option value="Belum Sekolah">Belum Sekolah</option><option value="TK">TK</option><option value="SD">SD</option><option value="SMP">SMP</option><option value="SMA">SMA</option><option value="SMK">SMK</option><option value="D1">D1</option><option value="D2">D2</option><option value="D3">D3</option><option value="S1">S1</option><option value="S2">S2</option><option value="S3">S3</option></select></td><td class="text-center"><button type="button" onclick="this.closest('tr').remove()" class="text-red-500 bg-red-50 p-2 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button></td></tr></tbody></table><button type="button" onclick="addRow('table-pasangan')" class="mt-3 w-full border-2 border-dashed border-gray-300 text-gray-500 hover:text-gray-700 py-3 rounded-lg flex items-center justify-center gap-2 font-medium"><i class="fas fa-plus-circle"></i> <span data-key="btn_add_row">Add Row</span></button></div>
+                <h3 class="text-sm font-bold bg-gray-100 p-2 rounded mb-2 text-gray-700" data-key="sub_parents">B. Orang Tua / Saudara</h3>
+                <div class="overflow-x-auto pb-2"><table class="w-full text-sm text-left border min-w-[500px]" id="table-ortu"><thead class="bg-gray-50 border-b"><tr><th class="p-3 w-1/3" data-key="th_name">Nama</th><th class="p-3" data-key="th_relation">Hubungan</th><th class="p-3" data-key="th_edu">Pendidikan</th><th class="p-3 w-10"></th></tr></thead><tbody><tr><td><input class="w-full border p-2 rounded" name="par_name[]"></td><td><select class="w-full border p-2 rounded" name="par_rel[]"><option value="Ayah">Ayah</option><option value="Ibu">Ibu</option><option value="Kakak">Kakak</option><option value="Adik">Adik</option></select></td><td><select class="w-full border p-2 rounded" name="par_edu[]"><option value="Belum Sekolah">Belum Sekolah</option><option value="TK">TK</option><option value="SD">SD</option><option value="SMP">SMP</option><option value="SMA">SMA</option><option value="SMK">SMK</option><option value="D1">D1</option><option value="D2">D2</option><option value="D3">D3</option><option value="S1">S1</option><option value="S2">S2</option><option value="S3">S3</option></select></td><td class="text-center"><button type="button" onclick="this.closest('tr').remove()" class="text-red-500 bg-red-50 p-2 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button></td></tr></tbody></table><button type="button" onclick="addRow('table-ortu')" class="mt-3 w-full border-2 border-dashed border-gray-300 text-gray-500 hover:text-gray-700 py-3 rounded-lg flex items-center justify-center gap-2 font-medium"><i class="fas fa-plus-circle"></i> <span data-key="btn_add_row">Add Row</span></button></div>
+            </div>
+            <div id="step-3" class="step-content">
+                <h2 class="text-lg font-bold text-sika-red mb-4 border-b pb-2 uppercase flex items-center gap-2"><i class="fas fa-graduation-cap"></i> <span data-key="step3_title">III. Pendidikan</span></h2>
+                <div class="overflow-x-auto mb-6 pb-2"><table class="w-full text-sm text-left border min-w-[600px]" id="table-pendidikan"><thead class="bg-gray-50 border-b"><tr><th class="p-3 w-24" data-key="th_level">Jenjang</th><th class="p-3 w-1/3" data-key="th_school">Nama Sekolah</th><th class="p-3 w-20" data-key="th_from">Dari</th><th class="p-3 w-20" data-key="th_to">Sampai</th><th class="p-3" data-key="th_major">Jurusan</th><th class="p-3 w-10"></th></tr></thead><tbody><tr><td><select class="w-24 border p-2 rounded" name="edu_level[]"><option value="SD">SD</option><option value="SMP">SMP</option><option value="SMA">SMA</option><option value="SMK">SMK</option><option value="D1">D1</option><option value="D2">D2</option><option value="D3">D3</option><option value="S1">S1</option><option value="S2">S2</option><option value="S3">S3</option></select></td><td><input class="w-full border p-2 rounded" name="edu_school[]"></td><td><input class="w-full border p-2 rounded w-20" name="edu_from[]" type="number" placeholder="Year"></td><td><input class="w-full border p-2 rounded w-20" name="edu_to[]" type="number" placeholder="Year"></td><td><input class="w-full border p-2 rounded" name="edu_major[]"></td><td class="text-center"><button type="button" onclick="this.closest('tr').remove()" class="text-red-500 bg-red-50 p-2 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button></td></tr></tbody></table><button type="button" onclick="addRow('table-pendidikan')" class="mt-3 w-full border-2 border-dashed border-gray-300 text-gray-500 hover:text-gray-700 py-3 rounded-lg flex items-center justify-center gap-2 font-medium"><i class="fas fa-plus-circle"></i> <span data-key="btn_add_row">Add Row</span></button></div>
+                <div class="mt-4"><label class="block text-sm font-medium text-gray-700 mb-1" data-key="label_lang">Kemampuan Bahasa</label><textarea name="bahasa" class="w-full border-gray-300 rounded-lg shadow-sm border p-3"></textarea></div>
+            </div>
+            <div id="step-4" class="step-content">
+                <h2 class="text-lg font-bold text-sika-red mb-4 border-b pb-2 uppercase flex items-center gap-2"><i class="fas fa-briefcase"></i> <span data-key="step4_title">IV. Pengalaman</span></h2>
+                <div class="overflow-x-auto mb-6 pb-2"><table class="w-full text-sm text-left border min-w-[700px]" id="table-kerja"><thead class="bg-gray-50 border-b"><tr><th class="p-3 w-1/4" data-key="th_company">Perusahaan</th><th class="p-3" data-key="th_position">Jabatan</th><th class="p-3 w-20" data-key="th_from">Dari</th><th class="p-3 w-20" data-key="th_to">Smp</th><th class="p-3" data-key="th_reason">Alasan Keluar</th><th class="p-3 w-10"></th></tr></thead><tbody><tr><td><input class="w-full border p-2 rounded" name="exp_comp[]"></td><td><input class="w-full border p-2 rounded" name="exp_pos[]"></td><td><input class="w-full border p-2 rounded w-20" name="exp_from[]" type="number" placeholder="Year"></td><td><input class="w-full border p-2 rounded w-20" name="exp_to[]" type="number" placeholder="Year"></td><td><input class="w-full border p-2 rounded" name="exp_reason[]"></td><td class="text-center"><button type="button" onclick="this.closest('tr').remove()" class="text-red-500 bg-red-50 p-2 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button></td></tr></tbody></table><button type="button" onclick="addRow('table-kerja')" class="mt-3 w-full border-2 border-dashed border-gray-300 text-gray-500 hover:text-gray-700 py-3 rounded-lg flex items-center justify-center gap-2 font-medium"><i class="fas fa-plus-circle"></i> <span data-key="btn_add_row">Add Row</span></button></div>
+            </div>
+            <div id="step-5" class="step-content">
+                <h2 class="text-lg font-bold text-sika-red mb-4 border-b pb-2 uppercase flex items-center gap-2"><i class="fas fa-list-alt"></i> <span data-key="step5_title">V. Detail Info</span></h2>
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-4 rounded-lg border"><label class="block text-sm font-bold text-gray-800 mb-2" data-key="q1">1. Pekerjaan disukai?</label><input type="text" name="job_like" class="w-full border-gray-300 border p-3 rounded-lg mb-2"><input type="text" name="job_like_why" class="w-full border-gray-300 border p-3 rounded-lg"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="bg-gray-50 p-4 rounded-lg border"><label class="block text-sm font-bold text-gray-800 mb-2" data-key="q2">2. Pernah melamar sebelumnya?</label><select name="prev_apply" class="w-full border-gray-300 border p-3 rounded-lg bg-white mb-2"><option value="No">Tidak / No</option><option value="Yes">Ya / Yes</option></select><input type="text" name="prev_apply_when" class="w-full border-gray-300 border p-3 rounded-lg"></div><div class="bg-gray-50 p-4 rounded-lg border"><label class="block text-sm font-bold text-gray-800 mb-2" data-key="q3">3. Ada Teman/Saudara?</label><input type="text" name="relatives" class="w-full border-gray-300 border p-3 rounded-lg"></div></div>
+                    <div class="bg-gray-50 p-4 rounded-lg border"><label class="block text-sm font-bold text-gray-800 mb-2" data-key="q4">4. Kelebihan &amp; Kekurangan?</label><textarea name="swot" rows="2" class="w-full border-gray-300 border p-3 rounded-lg"></textarea></div>
+                    <div class="bg-gray-50 p-4 rounded-lg border"><label class="block text-sm font-bold text-gray-800 mb-2" data-key="q5">5. Mengapa cocok?</label><textarea name="suitability" rows="2" class="w-full border-gray-300 border p-3 rounded-lg"></textarea></div>
+                    <div class="bg-gray-50 p-4 rounded-lg border"><label class="block text-sm font-bold text-gray-800 mb-2" data-key="q6">6. Tujuan Karir?</label><textarea name="career_goal" rows="2" class="w-full border-gray-300 border p-3 rounded-lg"></textarea></div>
+                    <div class="mt-4 overflow-x-auto pb-2"><label class="block text-sm font-bold text-gray-800 mb-2" data-key="q7">7. Referensi</label><table class="w-full text-sm text-left border min-w-[600px]" id="table-referensi"><thead class="bg-gray-100"><tr><th class="p-3 border" data-key="th_ref_name">Nama</th><th class="p-3 border" data-key="th_ref_rel">Hubungan</th><th class="p-3 border" data-key="th_ref_phone">No. Telpon</th><th class="w-8"></th></tr></thead><tbody><tr><td><input class="w-full border p-2 rounded" name="ref_name[]"></td><td><input class="w-full border p-2 rounded" name="ref_rel[]"></td><td><input class="w-full border p-2 rounded" name="ref_phone[]"></td><td class="text-center"><button type="button" onclick="this.closest('tr').remove()" class="text-red-500 bg-red-50 p-2 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button></td></tr></tbody></table><button type="button" onclick="addRow('table-referensi')" class="mt-2 text-xs bg-gray-200 px-3 py-2 rounded shadow-sm font-medium w-full active:bg-gray-300">+ <span data-key="btn_add_ref">Add Reference</span></button></div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3"><div class="bg-gray-50 p-3 rounded border"><label class="text-xs font-bold text-gray-600 block mb-1" data-key="q8">8. Gaji Terakhir</label><input type="number" name="last_salary" class="w-full border p-2 rounded"></div><div class="bg-gray-50 p-3 rounded border"><label class="text-xs font-bold text-gray-600 block mb-1" data-key="q9">9. Pendapatan Lain</label><input type="number" name="other_income" class="w-full border p-2 rounded"></div><div class="bg-gray-50 p-3 rounded border"><label class="text-xs font-bold text-gray-600 block mb-1" data-key="q10">10. Gaji Diharapkan</label><input type="number" name="expected_salary" class="w-full border p-2 rounded"></div></div>
+                    <div class="mt-4 overflow-x-auto pb-2"><label class="block text-sm font-bold text-gray-800 mb-2" data-key="label_social">Aktivitas Sosial</label><table class="w-full text-sm text-left border min-w-[600px]" id="table-sosial"><thead class="bg-gray-100"><tr><th class="p-3 border" data-key="th_org_name">Nama Organisasi</th><th class="p-3 border" data-key="th_activity">Kegiatan</th><th class="p-3 border w-20" data-key="th_year">Tahun</th><th class="p-3 border" data-key="th_position">Jabatan</th><th class="w-8"></th></tr></thead><tbody><tr><td><input class="w-full border p-2 rounded" name="soc_org[]"></td><td><input class="w-full border p-2 rounded" name="soc_act[]"></td><td><input class="w-full border p-2 rounded w-20" name="soc_year[]" type="number" placeholder="Year"></td><td><input class="w-full border p-2 rounded" name="soc_pos[]"></td><td class="text-center"><button type="button" onclick="this.closest('tr').remove()" class="text-red-500 bg-red-50 p-2 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button></td></tr></tbody></table><button type="button" onclick="addRow('table-sosial')" class="mt-2 text-xs bg-gray-200 px-3 py-2 rounded shadow-sm font-medium w-full active:bg-gray-300">+ <span data-key="btn_add_activity">Add Activity</span></button></div>
+                </div>
+            </div>
+
+            <!-- BAB 6 -->
+            <div id="step-6" class="step-content">
+                <h2 class="text-lg font-bold text-sika-red mb-4 border-b pb-2 uppercase flex items-center gap-2"><i class="fas fa-check-circle"></i> <span data-key="step6_title">VI. Konfirmasi</span></h2>
+                <div class="mb-4"><label class="block text-sm font-medium text-gray-700 mb-1" data-key="label_start_date">Tanggal Dapat Mulai Bekerja</label><input type="date" name="mulai_kerja" class="w-full md:w-1/3 border-gray-300 rounded-lg shadow-sm border p-3 bg-white"></div>
+                <div class="bg-yellow-50 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <h3 class="font-bold text-sika-red mb-4 text-base border-b border-yellow-200 pb-2" data-key="declaration_title">Pernyataan &amp; Persetujuan / Declaration</h3>
+                    <div class="space-y-3">
+                        <div class="consent-box"><input type="checkbox" id="check_verify" class="custom-checkbox focus:ring-yellow-400" required=""><label for="check_verify" class="text-sm text-gray-800 leading-snug cursor-pointer flex-1" data-key="check_verify_label">Saya mengizinkan perusahaan untuk menghubungi referensi dan informasi yang saya berikan.</label></div>
+                        <div class="consent-box"><input type="checkbox" id="check_auth" class="custom-checkbox focus:ring-yellow-400" required=""><label for="check_auth" class="text-sm text-gray-800 leading-snug cursor-pointer flex-1" data-key="check_auth_label">Saya menyatakan dan menjamin bahwa semua data dan informasi yang saya berikan adalah asli dan benar.</label></div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded text-sm text-blue-800 flex items-start gap-2"><i class="fas fa-info-circle mt-1"></i> <span data-key="finish_instruction">Jika sudah selesai, mohon klik <strong>Download PDF</strong>, kemudian klik tombol <strong>Kirim Email</strong> untuk mengirimkan file ke hr@id.sika.com.</span></div>
+            </div>
+        </form>
+
+        <!-- Nav -->
+        <div class="fixed bottom-0 left-0 right-0 bg-white border-t p-4 z-[100] flex gap-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] md:relative md:bg-transparent md:border-0 md:shadow-none md:p-0 md:mt-6 pb-6 md:pb-0">
+            <button type="button" onclick="resetForm()" class="hidden md:block bg-gray-200 text-gray-600 px-4 py-3 rounded-xl text-sm hover:bg-gray-300 font-bold"><i class="fas fa-trash-alt"></i></button>
+            <button type="button" id="btn-prev" onclick="changeStep(-1)" class="flex-1 bg-gray-100 text-gray-600 px-4 py-3 rounded-xl hover:bg-gray-200 transition font-bold border border-gray-300 active:bg-gray-300"><i class="fas fa-arrow-left"></i> <span data-key="btn_back">Kembali</span></button>
+            <button type="button" id="btn-next" onclick="changeStep(1)" class="flex-[2] bg-sika-yellow text-black font-bold px-4 py-3 rounded-xl hover:bg-yellow-400 transition shadow-md flex items-center justify-center gap-2 active:bg-yellow-500"><span data-key="btn_next">Selanjutnya</span> <i class="fas fa-arrow-right"></i></button>
+            <button type="button" id="btn-download" onclick="generatePDF()" class="flex-[1] bg-sika-red text-white font-bold px-4 py-3 rounded-xl hover:bg-red-700 transition shadow-md hidden flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 text-xs md:text-base"><i class="fas fa-file-pdf"></i> <span data-key="btn_download">Download PDF</span></button>
+            <button type="button" id="btn-email-direct" onclick="sendDirectEmail()" class="flex-[1] bg-blue-600 text-white font-bold px-4 py-3 rounded-xl hover:bg-blue-700 transition shadow-md hidden flex items-center justify-center gap-2 active:scale-95 text-xs md:text-base"><i class="fas fa-envelope"></i> <span data-key="btn_send_email">Kirim Email</span></button>
+        </div>
+        
+        <div id="privacy-footer" class="text-center mt-6 mb-2 pb-4"><a id="privacy-link" href="#" target="_blank" class="text-xs text-gray-400 hover:text-sika-red underline transition">Privacy Notice</a></div>
+
+        <div id="email-section" class="fixed inset-0 bg-black bg-opacity-80 z-[120] hidden flex items-center justify-center p-4">
+             <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center shadow-2xl relative">
+                 <button onclick="document.getElementById('email-section').classList.add('hidden')" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600"><i class="fas fa-times text-xl"></i></button>
+                 <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-check text-2xl text-green-600"></i></div>
+                 <h3 class="text-xl font-bold text-gray-800 mb-2">PDF Berhasil Disimpan!</h3>
+                 <p class="text-sm text-gray-600 mb-6" data-key="email_instruction">Silakan kirimkan file PDF tersebut ke HRD.</p>
+                 <button onclick="sendDirectEmail()" class="block w-full bg-blue-600 text-white px-6 py-4 rounded-xl font-bold hover:bg-blue-700 shadow-lg transition transform active:scale-95 mb-3 flex items-center justify-center gap-2"><i class="fas fa-paper-plane"></i> <span data-key="btn_send_email">Kirim Email Sekarang</span></button>
+                 <p class="text-xs text-gray-400">Pastikan melampirkan file PDF yang baru saja diunduh.</p>
+             </div>
+        </div>
+    </div>
+
+    <!-- Instructions Modal -->
+    <div id="info-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-lg w-full p-6 relative max-h-[80vh] overflow-y-auto">
+            <button onclick="document.getElementById('info-modal').classList.add('hidden')" class="absolute top-4 right-4 text-2xl text-gray-400">×</button>
+            <h3 class="text-xl font-bold mb-4 text-sika-red border-b pb-2">Petunjuk Pengisian</h3>
+            <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-700">
+                <li>Isi form dengan lengkap.</li>
+                <li><strong>Wajib:</strong> Upload Pas Foto di halaman pertama.</li>
+                <li>Klik "Download PDF" untuk menyimpan file.</li>
+                <li>Klik tombol <strong>"Kirim Email"</strong> (di sebelah tombol download).</li>
+                <li>Lampirkan file PDF dan kirim ke <strong>hr@id.sika.com</strong>.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- PDF TEMPLATE -->
+    <div id="pdf-template">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 3px solid #E30613; padding-bottom: 10px; margin-bottom: 10px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                 <img id="pdf-logo-img" src="data:image/jpeg;base64,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" style="height: 40px; display: block;" crossorigin="anonymous">
+            </div>
+            <div style="position: absolute; top: 10px; right: 10px; width: 30mm; height: 40mm; border: 1px solid #ccc;">
+                <img id="pdf-photo-img" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+            </div>
+            <div style="text-align: center; width: 100%; margin-top: 5px;">
+                <h1 style="margin: 0; font-size: 16px; font-weight: bold;"><span data-pdf-i18n="pdf_title">APPLICATION FOR EMPLOYMENT</span></h1>
+                <p style="margin: 0; font-size: 10px; color: #666;"><span data-pdf-i18n="pdf_confidential">Confidential / Rahasia</span></p>
+            </div>
+        </div>
+
+        <table style="width: 100%; font-size: 11px; margin-bottom: 10px; margin-right: 35mm;">
+            <tbody>
+                <tr><td width="25%"><strong><span data-pdf-i18n="label_position">Position Applied</span></strong></td><td width="2%">:</td><td data-pdf="jabatan"></td></tr>
+                <tr><td><strong><span data-pdf-i18n="label_name">Name</span></strong></td><td>:</td><td data-pdf="nama"></td></tr>
+                <tr><td><strong><span data-pdf-i18n="label_address">Address</span></strong></td><td>:</td><td data-pdf="alamat"></td></tr>
+                <tr><td><strong><span data-pdf-i18n="label_phone">Phone</span> / <span data-pdf-i18n="label_email">Email</span></strong></td><td>:</td><td><span data-pdf="telepon"></span> / <span data-pdf="email"></span></td></tr>
+                <tr><td><strong><span data-pdf-i18n="label_pob">Place of Birth</span>, <span data-pdf-i18n="label_dob">DOB</span></strong></td><td>:</td><td><span data-pdf="tempat_lahir"></span>, <span data-pdf="tgl_lahir"></span></td></tr>
+                <tr><td><strong><span data-pdf-i18n="label_gender">Gender</span> / <span data-pdf-i18n="label_religion">Religion</span></strong></td><td>:</td><td><span id="pdf-gender"></span> / <span data-pdf="agama"></span></td></tr>
+                <tr><td><strong><span data-pdf-i18n="label_marital">Marital Status</span></strong></td><td>:</td><td data-pdf="status_kawin"></td></tr>
+                <tr><td><strong><span data-pdf-i18n="label_idcard">ID Card</span></strong></td><td>:</td><td data-pdf="ktp"></td></tr>
+            </tbody>
+        </table>
+
+        <!-- Tables -->
+        <div class="pdf-header-sect" data-pdf-i18n="pdf_header_family">Family Data</div>
+        <p style="font-size: 9px; margin: 2px 0;"><span data-pdf-i18n="pdf_spouse">Spouse &amp; Children</span></p>
+        <table class="pdf-table" id="pdf-table-pasangan"><thead><tr style="background:#eee">
+            <th data-pdf-i18n="th_name">Name</th><th data-pdf-i18n="th_rel">Relationship</th><th data-pdf-i18n="th_dob">DOB</th><th data-pdf-i18n="th_sex">Gender</th><th data-pdf-i18n="th_edu">Education</th>
+        </tr></thead><tbody></tbody></table>
+        
+        <p style="font-size: 9px; margin: 2px 0;"><span data-pdf-i18n="pdf_parents">Parents &amp; Siblings</span></p>
+        <table class="pdf-table" id="pdf-table-ortu"><thead><tr style="background:#eee">
+            <th data-pdf-i18n="th_name">Name</th><th data-pdf-i18n="th_relation">Relation</th><th data-pdf-i18n="th_edu">Education</th>
+        </tr></thead><tbody></tbody></table>
+
+        <div class="pdf-header-sect" data-pdf-i18n="pdf_header_edu">Education</div>
+        <table class="pdf-table" id="pdf-table-pendidikan"><thead><tr style="background:#eee">
+            <th data-pdf-i18n="th_level">Level</th><th data-pdf-i18n="th_school">School</th><th data-pdf-i18n="th_from">From</th><th data-pdf-i18n="th_to">To</th><th data-pdf-i18n="th_major">Major</th>
+        </tr></thead><tbody></tbody></table>
+        <div style="font-size: 10px; margin-bottom: 5px;"><strong><span data-pdf-i18n="label_lang">Languages</span>:</strong> <span data-pdf="bahasa"></span></div>
+
+        <div class="pdf-header-sect" data-pdf-i18n="pdf_header_exp">Working Experience</div>
+        <table class="pdf-table" id="pdf-table-kerja"><thead><tr style="background:#eee">
+            <th data-pdf-i18n="th_company">Company</th><th data-pdf-i18n="th_position">Position</th><th data-pdf-i18n="th_from">From</th><th data-pdf-i18n="th_to">To</th><th data-pdf-i18n="th_reason">Reason</th>
+        </tr></thead><tbody></tbody></table>
+
+        <div class="pdf-header-sect" data-pdf-i18n="pdf_header_info">Detailed Information</div>
+        <table style="width: 100%; font-size: 10px;">
+            <tbody><tr><td width="40%" class="q-label"><span data-pdf-i18n="q1">1. Job Liked Most &amp; Why:</span></td><td><span data-pdf="job_like"></span> (<span data-pdf="job_like_why"></span>)</td></tr>
+            <tr><td class="q-label"><span data-pdf-i18n="q2">2. Applied Here Before?</span></td><td><span data-pdf="prev_apply"></span> (<span data-pdf="prev_apply_when"></span>)</td></tr>
+            <tr><td class="q-label"><span data-pdf-i18n="q3">3. Relatives/Friends here:</span></td><td><span data-pdf="relatives"></span></td></tr>
+            <tr><td class="q-label"><span data-pdf-i18n="q4">4. Strengths &amp; Weaknesses:</span></td><td><span data-pdf="swot"></span></td></tr>
+            <tr><td class="q-label"><span data-pdf-i18n="q5">5. Suitability:</span></td><td><span data-pdf="suitability"></span></td></tr>
+            <tr><td class="q-label"><span data-pdf-i18n="q6">6. Career Objective (5 Yrs):</span></td><td><span data-pdf="career_goal"></span></td></tr>
+            <tr><td class="q-label"><span data-pdf-i18n="q8">8. Salary (Last/Expected):</span></td><td><span data-pdf="last_salary"></span> / <span data-pdf="expected_salary"></span></td></tr>
+        </tbody></table>
+
+        <!-- Reference Table in PDF -->
+        <p style="font-size: 9px; margin: 5px 0 2px; font-weight:bold;"><span data-pdf-i18n="pdf_header_ref">7. References</span></p>
+        <table class="pdf-table" id="pdf-table-referensi"><thead><tr style="background:#eee">
+            <th data-pdf-i18n="th_ref_name">Name</th><th data-pdf-i18n="th_ref_rel">Relationship</th><th data-pdf-i18n="th_ref_phone">Phone</th>
+        </tr></thead><tbody></tbody></table>
+
+        <p style="font-size: 9px; margin: 5px 0 2px; font-weight:bold;"><span data-pdf-i18n="pdf_header_social">Social Activities</span></p>
+        <table class="pdf-table" id="pdf-table-sosial"><thead><tr style="background:#eee">
+            <th data-pdf-i18n="th_org_name">Organization</th><th data-pdf-i18n="th_activity">Activity</th><th data-pdf-i18n="th_year">Year</th><th data-pdf-i18n="th_position">Position</th>
+        </tr></thead><tbody></tbody></table>
+
+        <div style="margin-top: 20px; border: 1px solid #ccc; padding: 10px; page-break-inside: avoid;">
+            <table style="width: 100%">
+                <tbody><tr>
+                    <td width="60%" style="vertical-align: top; font-size: 10px; padding-right:10px;">
+                        <span data-pdf-i18n="pdf_declaration_text">I certify that the information contained in this application is true and complete. I authorize the company to verify any information provided.</span><br><br>
+                        <strong><span data-pdf-i18n="label_start_date">Date Available</span>:</strong> <span data-pdf="mulai_kerja"></span>
+                    </td>
+                    <td width="40%" style="text-align: center;">
+                        <!-- Digital Approval Stamp Replacement -->
+                        <div style="border: 2px solid #E30613; color: #E30613; padding: 8px; font-family: sans-serif; border-radius: 5px;">
+                            <strong style="font-size: 12px; display:block;"><span data-pdf-i18n="pdf_digital_sign">DICENTANG &amp; DISETUJUI SECARA DIGITAL</span></strong>
+                            <span style="font-size: 9px; display:block; margin-top:2px;">(Digitally Checked &amp; Agreed)</span>
+                        </div>
+                        <p style="font-size: 10px; margin-top: 5px;">( <span data-pdf="nama">Applicant</span> )</p>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+    </div>
+
+    <!-- LOGIC -->
+    <script>
+        const i18n = {
+            id: {
+                title: "Aplikasi Calon Karyawan",
+                subtitle: "Formulir Digital Resmi",
+                help_btn: "Bantuan",
+                step1_title: "I. Data Pribadi",
+                step2_title: "II. Data Keluarga",
+                step3_title: "III. Pendidikan",
+                step4_title: "IV. Pengalaman",
+                step5_title: "V. Detail Info",
+                step6_title: "VI. Konfirmasi",
+                label_photo: "Upload Pas Foto (Wajib)",
+                btn_upload_photo: "Pilih Foto",
+                label_position: "Jabatan Dilamar",
+                label_name: "Nama Lengkap",
+                label_address: "Alamat Lengkap",
+                label_gender: "Jenis Kelamin",
+                label_pob: "Tempat Lahir",
+                label_dob: "Tanggal Lahir",
+                label_phone: "Telepon / WA",
+                label_email: "Email",
+                label_religion: "Agama",
+                label_marital: "Status Perkawinan",
+                label_idcard: "No. KTP",
+                label_sim: "No. SIM",
+                sub_spouse: "A. Istri / Suami / Anak",
+                sub_parents: "B. Orang Tua / Saudara",
+                th_name: "Nama", th_rel: "Hubungan", th_dob: "Tgl Lahir", th_sex: "Jenis Kelamin", th_edu: "Pendidikan",
+                th_relation: "Hubungan", th_school: "Sekolah", th_from: "Dari", th_to: "Sampai", th_major: "Jurusan", th_level: "Jenjang",
+                label_lang: "Kemampuan Bahasa",
+                th_company: "Perusahaan", th_position: "Jabatan", th_reason: "Alasan Keluar",
+                q1: "1. Pekerjaan mana yang paling anda sukai? Mengapa?",
+                q2: "2. Pernah melamar di sini sebelumnya?",
+                q3: "3. Ada Teman/Saudara di perusahaan ini?",
+                q4: "4. Apa Kelebihan dan Kekurangan Anda?",
+                q5: "5. Mengapa cocok dengan pekerjaan ini?",
+                q6: "6. Tujuan Karir 5 Tahun ke depan?",
+                q7: "7. Referensi Anda",
+                th_ref_name: "Nama", th_ref_rel: "Hubungan", th_ref_phone: "No. Telpon",
+                q8: "8. Gaji Terakhir",
+                q9: "9. Pendapatan Lain",
+                q10: "10. Gaji Diharapkan",
+                label_social: "Aktivitas Sosial / Organisasi",
+                th_org_name: "Nama Organisasi", th_activity: "Kegiatan", th_year: "Tahun",
+                label_start_date: "Tanggal Dapat Mulai Bekerja",
+                declaration_title: "Pernyataan & Persetujuan",
+                check_verify_label: "Saya mengizinkan perusahaan untuk menghubungi referensi dan informasi yang saya berikan.",
+                check_auth_label: "Saya menyatakan dan menjamin bahwa semua data dan informasi yang saya berikan adalah asli dan benar. Saya mengizinkan perusahaan untuk mempergunakan data tersebut untuk proses rekrutmen yang dibutuhkan.",
+                btn_reset: "Reset", btn_back: "Kembali", btn_next: "Lanjut", btn_download: "Download PDF", btn_send_email: "Kirim Email",
+                btn_add_row: "Tambah Baris", btn_add_ref: "Tambah Referensi", btn_add_activity: "Tambah Kegiatan",
+                email_instruction: "Silakan kirimkan file PDF tersebut ke HRD dengan menekan tombol di bawah ini.",
+                finish_instruction: "Jika sudah selesai, mohon klik <strong>Download PDF</strong>, kemudian klik tombol <strong>Kirim Email</strong> untuk mengirimkan file ke hr@id.sika.com.",
+                
+                pdf_title: "FORMULIR LAMARAN KERJA",
+                pdf_confidential: "Rahasia / Confidential",
+                pdf_header_family: "Data Keluarga",
+                pdf_spouse: "Istri / Suami / Anak",
+                pdf_parents: "Orang Tua / Saudara",
+                th_sex: "J. Kelamin",
+                pdf_header_edu: "Pendidikan",
+                pdf_header_exp: "Pengalaman Kerja",
+                pdf_header_info: "Informasi Detail",
+                pdf_header_ref: "7. Referensi",
+                pdf_header_social: "Aktivitas Sosial",
+                pdf_declaration_text: "Saya menyatakan bahwa informasi yang terdapat dalam lamaran ini adalah benar dan lengkap. Saya mengizinkan perusahaan untuk memverifikasi setiap informasi yang diberikan.",
+                pdf_digital_sign: "DICENTANG & DISETUJUI SECARA DIGITAL"
+            },
+            en: {
+                title: "Application for Employment",
+                subtitle: "Official Digital Form",
+                help_btn: "Help",
+                step1_title: "I. Personal Details",
+                step2_title: "II. Family Details",
+                step3_title: "III. Education",
+                step4_title: "IV. Experience",
+                step5_title: "V. Detailed Info",
+                step6_title: "VI. Confirmation",
+                label_photo: "Upload Photo (Required)",
+                btn_upload_photo: "Take Photo",
+                label_position: "Position Applied For",
+                label_name: "Full Name",
+                label_address: "Full Address",
+                label_gender: "Gender",
+                label_pob: "Place of Birth",
+                label_dob: "Date of Birth",
+                label_phone: "Phone / WA",
+                label_email: "Email",
+                label_religion: "Religion",
+                label_marital: "Marital Status",
+                label_idcard: "ID Card No.",
+                label_sim: "Driving License",
+                sub_spouse: "A. Spouse / Children",
+                sub_parents: "B. Parents / Siblings",
+                th_name: "Name", th_rel: "Relation", th_dob: "DOB", th_sex: "Gender", th_edu: "Education",
+                th_relation: "Relationship", th_school: "School", th_from: "From", th_to: "To", th_major: "Major", th_level: "Level",
+                label_lang: "Language Proficiency",
+                th_company: "Company", th_position: "Position", th_reason: "Reason for Leaving",
+                q1: "1. Which job do you like the most? Why?",
+                q2: "2. Have you applied here before?",
+                q3: "3. Do you have friends/relatives here?",
+                q4: "4. What are your Strengths & Weaknesses?",
+                q5: "5. Why are you suitable for this job?",
+                q6: "6. Career objective in next 5 years?",
+                q7: "7. Your References",
+                th_ref_name: "Name", th_ref_rel: "Relationship", th_ref_phone: "Phone No.",
+                q8: "8. Last Salary",
+                q9: "9. Other Income",
+                q10: "10. Expected Salary",
+                label_social: "Social Activities / Organization",
+                th_org_name: "Organization Name", th_activity: "Activity", th_year: "Year",
+                label_start_date: "Date Available",
+                declaration_title: "Declaration & Consent",
+                check_verify_label: "I authorize the company to contact references and verify information provided.",
+                check_auth_label: "I declare that all data provided is true and authentic. I authorize the company to use this data for the recruitment process.",
+                btn_reset: "Reset", btn_back: "Back", btn_next: "Next", btn_download: "Download PDF", btn_send_email: "Send Email",
+                btn_add_row: "Add Row", btn_add_ref: "Add Reference", btn_add_activity: "Add Activity",
+                email_instruction: "Final Step: Click the button below to send your application (PDF) to HRD.",
+                finish_instruction: "Once finished, please click <strong>Download PDF</strong>, then click <strong>Send Email</strong> to submit to hr@id.sika.com.",
+                
+                pdf_title: "APPLICATION FOR EMPLOYMENT",
+                pdf_confidential: "Confidential / Rahasia",
+                pdf_header_family: "Family Data",
+                pdf_spouse: "Spouse & Children",
+                pdf_parents: "Parents & Siblings",
+                th_sex: "Gender",
+                pdf_header_edu: "Education",
+                pdf_header_exp: "Working Experience",
+                pdf_header_info: "Detailed Information",
+                pdf_header_ref: "7. References",
+                pdf_header_social: "Social Activities",
+                pdf_declaration_text: "I certify that the information contained in this application is true and complete. I authorize the company to verify any information provided.",
+                pdf_digital_sign: "DIGITALLY CHECKED & AGREED"
+            }
+        };
+
+        let currentLang = 'id';
+        let currentStep = 1;
+        const totalSteps = 6;
+        let uploadedPhotoData = null;
+        let customLogoData = null;
+
+        const maritalOptions = { id: ['Belum Kawin', 'Kawin', 'Cerai'], en: ['Single', 'Married', 'Divorced'] };
+        const genderOptions = { id: ['Pria', 'Wanita'], en: ['Male', 'Female'] };
+        const relOptions = { id: ['Ayah', 'Ibu', 'Kakak', 'Adik'], en: ['Father', 'Mother', 'Brother', 'Sister'] };
+        const eduOptions = ['Belum Sekolah', 'TK', 'SD', 'SMP', 'SMA', 'SMK', 'D1', 'D2', 'D3', 'S1', 'S2', 'S3'];
+        const mainEduOptions = ['SD', 'SMP', 'SMA', 'SMK', 'D1', 'D2', 'D3', 'S1', 'S2', 'S3'];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderOptions();
+            const checks = [document.getElementById('check_verify'), document.getElementById('check_auth')];
+            checks.forEach(c => {
+                c.addEventListener('change', () => {
+                    const btn = document.getElementById('btn-download');
+                    const btnEmail = document.getElementById('btn-email-direct');
+                    if(document.getElementById('check_verify').checked && document.getElementById('check_auth').checked) {
+                        btn.disabled = false; btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    } else {
+                        btn.disabled = true; btn.classList.add('opacity-50', 'cursor-not-allowed');
+                    }
+                });
+            });
+            toggleReligion(document.querySelector('select[name="agama_select"]'));
+            document.getElementById('custom-logo-input').addEventListener('change', function(e) {
+                if (e.target.files && e.target.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(evt) {
+                        customLogoData = evt.target.result;
+                        ['welcome-logo-img', 'header-logo-img', 'pdf-logo-img'].forEach(id => {
+                            const img = document.getElementById(id);
+                            if(img) { img.src = customLogoData; img.style.display = 'block'; }
+                        });
+                        document.querySelectorAll('.sika-text-logo').forEach(el => el.style.display = 'none');
+                        alert("Logo berhasil diupdate! Silakan klik 'Download HTML Master' untuk menyimpan perubahan ini.");
+                    };
+                    reader.readAsDataURL(e.target.files[0]);
+                }
+            });
+        });
+
+        function renderOptions() {
+             const maritalSelect = document.getElementById('marital-select');
+             maritalSelect.innerHTML = maritalOptions[currentLang].map(opt => `<option value="${opt}">${opt}</option>`).join('');
+             const genderSelect = document.getElementById('gender-select');
+             genderSelect.innerHTML = genderOptions[currentLang].map(opt => `<option value="${opt}">${opt}</option>`).join('');
+             ['table-pasangan', 'table-ortu', 'table-pendidikan', 'table-kerja', 'table-sosial', 'table-referensi'].forEach(id => {
+                 document.querySelector(`#${id} tbody`).innerHTML = ''; addRow(id);
+             });
+        }
+
+        function handleFileUpload(e, callback) {
+            if (e.target.files && e.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(evt) { callback(evt.target.result); };
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        }
+
+        function previewPhoto(input) {
+            handleFileUpload({target: input}, (data) => {
+                uploadedPhotoData = data;
+                document.getElementById('photo-preview-img').src = data;
+            });
+        }
+
+        function toggleReligion(select) {
+            const otherInput = document.getElementById('agama_lain');
+            const finalInput = document.getElementById('agama_final');
+            if (select.value === 'Lainnya') {
+                otherInput.classList.add('show'); otherInput.setAttribute('required', 'true');
+                finalInput.value = otherInput.value;
+                otherInput.oninput = function() { finalInput.value = this.value; };
+            } else {
+                otherInput.classList.remove('show'); otherInput.removeAttribute('required');
+                finalInput.value = select.value;
+            }
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.getElementById('welcome-screen').style.display = 'none';
+            document.getElementById('app-container').classList.remove('hidden');
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (i18n[lang][key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = i18n[lang][key];
+                    else el.innerHTML = i18n[lang][key];
+                    if(key === 'btn_upload_photo') {
+                         document.getElementById('btn-photo').innerHTML = `<i class="fas fa-upload"></i> ${i18n[lang][key]}`;
+                    }
+                }
+            });
+            const privacyLink = document.getElementById('privacy-link');
+            if (lang === 'id') {
+                privacyLink.href = 'https://idn.sika.com/in/Pemberitahuan-Perlindungan.html'; privacyLink.innerText = 'Pemberitahuan Perlindungan Data';
+            } else {
+                privacyLink.href = 'https://idn.sika.com/en/privacy-notice.html'; privacyLink.innerText = 'Privacy Notice';
+            }
+            const labels = lang === 'id' ? ['Pribadi', 'Keluarga', 'Pend.', 'Kerja', 'Info', 'Done'] : ['Personal', 'Family', 'Edu', 'Exp', 'Info', 'Done'];
+            document.getElementById('progress-labels').innerHTML = labels.map(l => `<span>${l}</span>`).join('');
+            renderOptions();
+            updateUI();
+        }
+
+        function changeStep(n) {
+            if (n === 1 && !validateStep(currentStep)) return;
+            currentStep += n;
+            if (currentStep < 1) currentStep = 1; if (currentStep > totalSteps) currentStep = totalSteps;
+            updateUI(); window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateUI() {
+            document.querySelectorAll('.step-content').forEach((el, index) => {
+                if ((index + 1) === currentStep) el.classList.add('active'); else el.classList.remove('active');
+            });
+            document.getElementById('btn-prev').disabled = currentStep === 1;
+            document.getElementById('btn-prev').classList.toggle('opacity-50', currentStep === 1);
+            
+            if (currentStep === totalSteps) {
+                document.getElementById('btn-next').classList.add('hidden');
+                document.getElementById('btn-download').classList.remove('hidden'); document.getElementById('btn-download').style.display = 'flex';
+                document.getElementById('btn-email-direct').classList.remove('hidden'); document.getElementById('btn-email-direct').style.display = 'flex';
+                const btn = document.getElementById('btn-download');
+                if(document.getElementById('check_verify').checked && document.getElementById('check_auth').checked) {
+                    btn.disabled = false; btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                } else {
+                    btn.disabled = true; btn.classList.add('opacity-50', 'cursor-not-allowed');
+                }
+            } else {
+                document.getElementById('btn-next').classList.remove('hidden');
+                document.getElementById('btn-download').classList.add('hidden');
+                document.getElementById('btn-email-direct').classList.add('hidden');
+                document.getElementById('btn-next').style.display = 'flex'; 
+            }
+            document.getElementById('progress-bar').style.width = `${(currentStep / totalSteps) * 100}%`;
+        }
+
+        function validateStep(step) {
+            const activeStep = document.getElementById(`step-${step}`);
+            const requiredInputs = activeStep.querySelectorAll('input[required]:not(.hidden-input:not(.show)), select[required], textarea[required]');
+            let valid = true;
+            requiredInputs.forEach(input => {
+                if (!input.value || (input.type === 'checkbox' && !input.checked)) {
+                    input.classList.add('border-red-500', 'ring-2', 'ring-red-500'); valid = false;
+                } else {
+                    input.classList.remove('border-red-500', 'ring-2', 'ring-red-500');
+                }
+            });
+            if (!valid) alert(currentLang === 'id' ? "Mohon lengkapi kolom wajib!" : "Please fill in required fields!");
+            return valid;
+        }
+
+        function generateOptions(options) { return options.map(opt => `<option value="${opt}">${opt}</option>`).join(''); }
+
+        function addRow(tableId) {
+            const tbody = document.querySelector(`#${tableId} tbody`);
+            const tr = document.createElement('tr');
+            let cols = '';
+            if (tableId === 'table-pasangan') {
+                cols = `<td><input class="w-full border p-2 rounded" name="fam_name[]"></td><td><select class="w-full border p-2 rounded" name="fam_rel[]"><option value="Suami">Suami / Husband</option><option value="Istri">Istri / Wife</option><option value="Anak">Anak / Child</option></select></td><td><input type="date" class="w-full border p-2 rounded bg-white" name="fam_dob[]"></td><td><select class="w-full border p-2 rounded bg-white" name="fam_sex[]">${genderOptions[currentLang].map(o => `<option>${o}</option>`).join('')}</select></td><td><select class="w-full border p-2 rounded" name="fam_edu[]">${generateOptions(eduOptions)}</select></td>`;
+            } else if (tableId === 'table-ortu') {
+                cols = `<td><input class="w-full border p-2 rounded" name="par_name[]"></td><td><select class="w-full border p-2 rounded" name="par_rel[]">${generateOptions(relOptions[currentLang])}</select></td><td><select class="w-full border p-2 rounded" name="par_edu[]">${generateOptions(eduOptions)}</select></td>`;
+            } else if (tableId === 'table-pendidikan') {
+                cols = `<td><select class="w-24 border p-2 rounded" name="edu_level[]">${generateOptions(mainEduOptions)}</select></td><td><input class="w-full border p-2 rounded" name="edu_school[]"></td><td><input class="w-full border p-2 rounded w-20" name="edu_from[]" type="number" placeholder="Year"></td><td><input class="w-full border p-2 rounded w-20" name="edu_to[]" type="number" placeholder="Year"></td><td><input class="w-full border p-2 rounded" name="edu_major[]"></td>`;
+            } else if (tableId === 'table-kerja') {
+                cols = `<td><input class="w-full border p-2 rounded" name="exp_comp[]"></td><td><input class="w-full border p-2 rounded" name="exp_pos[]"></td><td><input class="w-full border p-2 rounded w-20" name="exp_from[]" type="number" placeholder="Year"></td><td><input class="w-full border p-2 rounded w-20" name="exp_to[]" type="number" placeholder="Year"></td><td><input class="w-full border p-2 rounded" name="exp_reason[]"></td>`;
+            } else if (tableId === 'table-sosial') {
+                cols = `<td><input class="w-full border p-2 rounded" name="soc_org[]"></td><td><input class="w-full border p-2 rounded" name="soc_act[]"></td><td><input class="w-full border p-2 rounded w-20" name="soc_year[]" type="number" placeholder="Year"></td><td><input class="w-full border p-2 rounded" name="soc_pos[]"></td>`;
+            } else if (tableId === 'table-referensi') {
+                cols = `<td><input class="w-full border p-2 rounded" name="ref_name[]"></td><td><input class="w-full border p-2 rounded" name="ref_rel[]"></td><td><input class="w-full border p-2 rounded" name="ref_phone[]"></td>`;
+            }
+            tr.innerHTML = cols + `<td class="text-center"><button type="button" onclick="this.closest('tr').remove()" class="text-red-500 bg-red-50 p-2 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button></td>`;
+            tbody.appendChild(tr);
+        }
+
+        function generatePDF() {
+            if(!document.getElementById('check_verify').checked || !document.getElementById('check_auth').checked) {
+                alert('Please check all declaration boxes first.'); return;
+            }
+            const pdfTemplate = document.getElementById('pdf-template');
+            pdfTemplate.querySelectorAll('[data-pdf-i18n]').forEach(el => {
+                const key = el.getAttribute('data-pdf-i18n');
+                if (i18n[currentLang][key]) el.innerText = i18n[currentLang][key];
+            });
+            const name = document.querySelector('[name="nama"]').value || "Candidate";
+            const pdfPhoto = document.getElementById('pdf-photo-img');
+            if (uploadedPhotoData) { pdfPhoto.src = uploadedPhotoData; pdfPhoto.style.display = 'block'; } else { pdfPhoto.style.display = 'none'; }
+            const genderSelect = document.getElementById('gender-select');
+            const pdfGender = document.getElementById('pdf-gender');
+            if(genderSelect.value) pdfGender.innerText = genderSelect.value;
+            document.querySelector('[data-pdf="status_kawin"]').innerText = document.getElementById('marital-select').value;
+            document.querySelectorAll('[data-pdf]').forEach(el => {
+                const key = el.getAttribute('data-pdf');
+                const input = document.querySelector(`[name="${key}"]`);
+                if (input && key !== 'status_kawin') el.innerText = input.value;
+            });
+            ['pasangan', 'ortu', 'pendidikan', 'kerja', 'sosial', 'referensi'].forEach(t => { copyTableToPDF(`table-${t}`, `pdf-table-${t}`); });
+            const element = document.getElementById('pdf-template');
+            element.style.display = 'block';
+            const opt = { margin: 0, filename: `Sika_App_${name.replace(/\s+/g, '_')}.pdf`, image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2, useCORS: true, allowTaint: true, logging: false }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } };
+            const btnDownload = document.getElementById('btn-download');
+            const originalText = btnDownload.innerHTML;
+            btnDownload.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...'; btnDownload.disabled = true;
+            html2pdf().set(opt).from(element).save().then(() => {
+                element.style.display = 'none'; btnDownload.innerHTML = originalText; btnDownload.disabled = false;
+                document.getElementById('email-section').classList.remove('hidden');
+            }).catch(err => {
+                console.error("PDF Error:", err); alert("Gagal membuat PDF. (Error: " + (err.message || err) + ")");
+                element.style.display = 'none'; btnDownload.innerHTML = originalText; btnDownload.disabled = false;
+            });
+        }
+
+        function sendDirectEmail() {
+             const name = document.querySelector('[name="nama"]').value || "Candidate";
+             const position = document.querySelector('[name="jabatan"]').value || "Position";
+             const subject = `Lamaran Kerja - ${name} - ${position}`;
+             let body = `Kepada HRD Sika Indonesia,\n\n` +
+                 `Dengan ini saya mengirimkan formulir lamaran kerja saya (terlampir) untuk posisi ${position}.\n\n` +
+                 `CV Komplit diantaranya Surat Lamaran, Ijazah, Surat Keterangan Kerja, KTP, NPWP Akan dibawa ketika datang untuk interview.\n\n` +
+                 `Terima kasih.\n\n` +
+                 `Hormat saya,\n${name}`;
+             window.location.href = `mailto:hr@id.sika.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function copyTableToPDF(srcId, destId) {
+            const srcRows = document.querySelectorAll(`#${srcId} tbody tr`);
+            const destBody = document.querySelector(`#${destId} tbody`);
+            destBody.innerHTML = '';
+            srcRows.forEach(row => {
+                const inputs = row.querySelectorAll('input, select');
+                let hasData = false; inputs.forEach(i => { if(i.value) hasData = true; });
+                if(hasData) {
+                    const tr = document.createElement('tr');
+                    inputs.forEach(i => { const td = document.createElement('td'); td.innerText = i.value; tr.appendChild(td); });
+                    destBody.appendChild(tr);
+                }
+            });
+        }
+
+        function copyEmbedCode() {
+            const copyText = document.querySelector(".code-block");
+            copyText.select(); copyText.setSelectionRange(0, 99999); 
+            navigator.clipboard.writeText(copyText.value); alert("Kode Embed disalin ke clipboard!");
+        }
+
+        function downloadMasterHTML() {
+            const docClone = document.documentElement.cloneNode(true);
+            if(customLogoData) {
+                ['welcome-logo-img', 'header-logo-img', 'pdf-logo-img'].forEach(id => {
+                    const img = docClone.querySelector(`#${id}`);
+                    if(img) { img.src = customLogoData; img.removeAttribute('onerror'); img.style.display = 'block'; }
+                });
+                docClone.querySelectorAll('.sika-text-logo').forEach(el => el.style.display = 'none');
+            }
+            const setupPanel = docClone.querySelector('#setup-panel'); if(setupPanel) setupPanel.remove();
+            const htmlContent = "<!DOCTYPE html>\n" + docClone.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a'); a.href = url; a.download = "Sika_Application_Master_Logo_Updated.html";
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        }
+
+        function showInstructions() { document.getElementById('info-modal').classList.remove('hidden'); }
+        function resetForm() { 
+            if(confirm('Apakah Anda yakin ingin menghapus semua data?')) {
+                document.getElementById('employeeForm').reset();
+                uploadedPhotoData = null; document.getElementById('photo-preview-img').src = "https://via.placeholder.com/120x150?text=FOTO";
+                currentStep = 1; updateUI(); window.scrollTo(0,0);
+            }
+        }
+    </script>
+
+</body></html>
