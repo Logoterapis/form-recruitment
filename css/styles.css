@@ -6,95 +6,214 @@
 }
 
 /* Mobile Optimization */
-html { -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
-input, select, textarea { font-size: 16px !important; border-radius: 8px; }
-input[type="date"] { -webkit-appearance: none; min-height: 44px; }
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
 
-.bg-sika-yellow { background-color: var(--sika-yellow); }
-.text-sika-red { color: var(--sika-red); }
-.bg-sika-red { background-color: var(--sika-red); }
-.border-sika-yellow { border-color: var(--sika-yellow); }
+input,
+select,
+textarea {
+    font-size: 16px !important;
+    border-radius: 8px;
+}
+
+input[type="date"] {
+    -webkit-appearance: none;
+    min-height: 44px;
+}
+
+.bg-sika-yellow {
+    background-color: var(--sika-yellow);
+}
+
+.text-sika-red {
+    color: var(--sika-red);
+}
+
+.bg-sika-red {
+    background-color: var(--sika-red);
+}
+
+.border-sika-yellow {
+    border-color: var(--sika-yellow);
+}
 
 /* Animations */
-.step-content { display: none; animation: fadeIn 0.4s; }
-.step-content.active { display: block; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.step-content {
+    display: none;
+    animation: fadeIn 0.4s;
+}
+
+.step-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* Photo Upload Preview */
 .photo-upload-box {
-    width: 120px; height: 150px;
+    width: 120px;
+    height: 150px;
     border: 2px dashed #ccc;
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden; background: #f9f9f9; position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #f9f9f9;
+    position: relative;
 }
-.photo-upload-box img { width: 100%; height: 100%; object-fit: cover; }
+
+.photo-upload-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 /* Fallback Logo Style */
 .sika-text-logo {
-    display: none; background-color: var(--sika-yellow); color: black;
-    font-weight: 900; padding: 5px 15px; font-family: Arial, sans-serif;
-    letter-spacing: -1px; border-radius: 4px;
+    display: none;
+    background-color: var(--sika-yellow);
+    color: black;
+    font-weight: 900;
+    padding: 5px 15px;
+    font-family: Arial, sans-serif;
+    letter-spacing: -1px;
+    border-radius: 4px;
 }
 
 /* =========================================
    FIX PDF STYLING (MENCEGAH TERPOTONG & LOGO BESAR)
    ========================================= */
 #pdf-template {
-    display: none; 
-    font-family: Arial, sans-serif; 
+    display: none;
+    font-family: Arial, sans-serif;
     font-size: 11px;
-    color: #000; 
-    line-height: 1.3; 
-    width: 190mm; /* Lebar aman A4 */
+    color: #000;
+    line-height: 1.3;
+    width: 190mm;
+    /* Lebar aman A4 */
 }
 
 /* Memaksa text turun ke bawah jika panjang, mencegah tabel melebar */
-#pdf-template table { 
-    width: 100%; 
-    border-collapse: collapse; 
-    table-layout: fixed; 
-    word-wrap: break-word; 
+#pdf-template table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    word-wrap: break-word;
 }
 
-.pdf-table { margin-bottom: 8px; font-size: 10px; }
-.pdf-table th, .pdf-table td { border: 1px solid #999; padding: 4px; text-align: left; vertical-align: top;}
-
-.pdf-header-sect { 
-    background-color: #f0f0f0; font-weight: bold; 
-    border-bottom: 2px solid var(--sika-red); margin-top: 10px;
-    padding: 3px; text-transform: uppercase; font-size: 11px;
+.pdf-table {
+    margin-bottom: 8px;
+    font-size: 10px;
 }
-.q-label { font-weight: bold; margin-top: 5px; display: block; }
 
-/* CSS PAGE BREAK RULES: Mencegah tabel & teks terpotong di tengah */
-tr, td, .pdf-header-sect, p {
+.pdf-table th,
+.pdf-table td {
+    border: 1px solid #999;
+    padding: 4px;
+    text-align: left;
+    vertical-align: top;
+}
+
+#pdf-template tr {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
 }
+
+.pdf-header-sect {
+    background-color: #E3000F;
+    color: white;
+    padding: 4px 8px;
+    font-weight: bold;
+    font-size: 11px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    page-break-after: avoid;
+    break-after: avoid;
+    page-break-inside: avoid;
+    /* Added as per instruction */
+    text-transform: uppercase;
+    /* Kept from original */
+}
+
+.q-label {
+    font-weight: bold;
+    margin-top: 5px;
+    display: block;
+}
+
+/* CSS PAGE BREAK RULES: Mencegah tabel & teks terpotong di tengah */
+tr,
+td,
+.pdf-header-sect,
+p {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+}
+
 /* ========================================= */
 
 /* Checkbox Custom Style */
 .custom-checkbox {
-    accent-color: var(--sika-red); width: 22px; height: 22px;
-    flex-shrink: 0; margin-top: 2px; cursor: pointer;
+    accent-color: var(--sika-red);
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    cursor: pointer;
 }
+
 .consent-box {
-    background-color: #fff; border: 1px solid #ddd; padding: 12px;
-    border-radius: 8px; display: flex; align-items: flex-start;
-    gap: 10px; transition: all 0.2s;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    transition: all 0.2s;
 }
 
 /* Helper for hidden inputs */
-.hidden-input { display: none; }
-.hidden-input.show { display: block; }
+.hidden-input {
+    display: none;
+}
+
+.hidden-input.show {
+    display: block;
+}
 
 /* Admin Setup Panel */
 #setup-panel {
-    border: 2px dashed #ccc; padding: 15px; margin-top: 20px;
-    border-radius: 8px; background: #fdfdfd; font-size: 12px; text-align: left;
+    border: 2px dashed #ccc;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    background: #fdfdfd;
+    font-size: 12px;
+    text-align: left;
 }
+
 .code-block {
-    background: #f1f1f1; padding: 10px; border-radius: 5px;
-    font-family: monospace; font-size: 11px; color: #333;
-    width: 100%; height: 80px; margin-top: 5px; border: 1px solid #ccc;
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 11px;
+    color: #333;
+    width: 100%;
+    height: 80px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
 }

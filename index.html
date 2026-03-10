@@ -23,7 +23,7 @@
         class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center p-4 overflow-y-auto">
         <div class="max-w-md w-full text-center mt-10 mb-10">
             <div class="mb-8 flex justify-center items-center flex-col relative group">
-                <img id="welcome-logo-img" src="assets/logo.png" class="h-24 md:h-32 object-contain mb-4"
+                <img id="welcome-logo-img" src="assets/logo.png" class="h-48 md:h-64 object-contain mb-4"
                     alt="Sika Logo"
                     onerror="this.style.display='none'; document.getElementById('welcome-text-logo').style.display='block';">
                 <div id="welcome-text-logo" class="sika-text-logo text-4xl mb-2">SIKA</div>
@@ -47,6 +47,15 @@
                     <i class="fas fa-chevron-right text-gray-400 group-hover:text-red-500 transition-colors"></i>
                 </button>
             </div>
+
+            <div class="mt-4 text-center">
+                <a href="https://idn.sika.com/in/Pemberitahuan-Perlindungan.html" target="_blank"
+                    class="text-xs text-blue-600 underline hover:text-blue-800 transition-colors">Pemberitahuan
+                    Perlindungan Data</a>
+                <span class="text-gray-300 mx-2 text-xs">|</span>
+                <a href="https://idn.sika.com/en/privacy-notice.html" target="_blank"
+                    class="text-xs text-blue-600 underline hover:text-blue-800 transition-colors">Privacy Notice</a>
+            </div>
         </div>
     </div>
 
@@ -56,11 +65,16 @@
         <header
             class="bg-white shadow-sm md:rounded-t-xl p-4 border-b flex justify-between items-center sticky top-0 z-40">
             <div class="flex items-center gap-3">
-                <img id="header-logo-img" src="assets/logo.png" class="h-10 md:h-14 object-contain" alt="Sika"
+                <img id="header-logo-img" src="assets/logo.png" class="h-20 md:h-28 object-contain" alt="Sika"
                     onerror="this.style.display='none'; document.getElementById('header-text-logo').style.display='block';">
                 <div id="header-text-logo" class="sika-text-logo text-xl">SIKA</div>
             </div>
             <div class="flex gap-2">
+                <button onclick="showWelcomeScreen()"
+                    class="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center"
+                    title="Ganti Bahasa / Change Language">
+                    <i class="fas fa-globe"></i>
+                </button>
                 <button onclick="showInstructions()"
                     class="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center">
                     <i class="fas fa-info"></i>
@@ -119,10 +133,15 @@
                             <input type="number" name="ktp" class="w-full border p-2 rounded" required>
                         </div>
                         <div class="space-y-1">
-                            <label class="block text-sm font-semibold text-gray-700" data-key="label_dob">Place,
-                                DOB</label>
-                            <input type="text" name="ttl" class="w-full border p-2 rounded"
-                                placeholder="Jakarta, 01-01-1990" required>
+                            <label class="block text-sm font-semibold text-gray-700" data-key="label_pob">Place of
+                                Birth</label>
+                            <input type="text" name="tmp_lahir" class="w-full border p-2 rounded" placeholder="Jakarta"
+                                required>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="block text-sm font-semibold text-gray-700" data-key="label_dob">Date of
+                                Birth</label>
+                            <input type="date" name="tgl_lahir" class="w-full border p-2 rounded bg-white" required>
                         </div>
                         <div class="space-y-1">
                             <label class="block text-sm font-semibold text-gray-700"
@@ -176,14 +195,6 @@
 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="space-y-1">
-                        <label class="block text-sm font-semibold text-gray-700" data-key="label_weight">Weight</label>
-                        <input type="number" name="berat" class="w-full border p-2 rounded">
-                    </div>
-                    <div class="space-y-1">
-                        <label class="block text-sm font-semibold text-gray-700" data-key="label_height">Height</label>
-                        <input type="number" name="tinggi" class="w-full border p-2 rounded">
-                    </div>
-                    <div class="space-y-1">
                         <label class="block text-sm font-semibold text-gray-700" data-key="label_blood">Blood
                             Type</label>
                         <select name="gol_darah" class="w-full border p-2 rounded bg-white">
@@ -212,11 +223,11 @@
                         <table id="table-pasangan" class="w-full text-sm min-w-[700px]">
                             <thead class="bg-gray-50 uppercase text-[10px] tracking-widest text-gray-500">
                                 <tr>
-                                    <th class="p-2 border">Nama / Name</th>
-                                    <th class="p-2 border">Hub / Rel</th>
-                                    <th class="p-2 border">Lahir / DOB</th>
-                                    <th class="p-2 border">Sex</th>
-                                    <th class="p-2 border">Pend / Edu</th>
+                                    <th class="p-2 border" data-key="label_fam_name">Nama / Name</th>
+                                    <th class="p-2 border" data-key="label_fam_rel">Hub / Rel</th>
+                                    <th class="p-2 border" data-key="label_fam_dob">Lahir / DOB</th>
+                                    <th class="p-2 border" data-key="label_fam_sex">Gender</th>
+                                    <th class="p-2 border" data-key="label_fam_edu">Pend / Edu</th>
                                     <th class="p-2 border w-10"></th>
                                 </tr>
                             </thead>
@@ -235,9 +246,9 @@
                         <table id="table-ortu" class="w-full text-sm min-w-[500px]">
                             <thead class="bg-gray-50 uppercase text-[10px] tracking-widest text-gray-500">
                                 <tr>
-                                    <th class="p-2 border">Nama / Name</th>
-                                    <th class="p-2 border">Hub / Rel</th>
-                                    <th class="p-2 border">Pend / Edu</th>
+                                    <th class="p-2 border" data-key="label_par_name">Nama / Name</th>
+                                    <th class="p-2 border" data-key="label_par_rel">Hub / Rel</th>
+                                    <th class="p-2 border" data-key="label_par_edu">Pend / Edu</th>
                                     <th class="p-2 border w-10"></th>
                                 </tr>
                             </thead>
@@ -261,11 +272,11 @@
                         <table id="table-pendidikan" class="w-full text-sm min-w-[600px]">
                             <thead class="bg-gray-50 uppercase text-[10px] tracking-widest text-gray-500">
                                 <tr>
-                                    <th class="p-2 border" data-key="step3_title">Level</th>
-                                    <th class="p-2 border" data-key="label_school">Institution</th>
-                                    <th class="p-2 border" data-key="label_year_from">From</th>
-                                    <th class="p-2 border" data-key="label_year_to">To</th>
-                                    <th class="p-2 border" data-key="label_major">Major</th>
+                                    <th class="p-2 border" data-key="pdf_th_level">Level</th>
+                                    <th class="p-2 border" data-key="pdf_th_inst">Sekolah / School</th>
+                                    <th class="p-2 border" data-key="pdf_th_from">Dari / From</th>
+                                    <th class="p-2 border" data-key="pdf_th_to">Ke / To</th>
+                                    <th class="p-2 border" data-key="pdf_th_major">Jurusan / Major</th>
                                     <th class="p-2 border w-10"></th>
                                 </tr>
                             </thead>
@@ -309,11 +320,7 @@
                         <table id="table-kerja" class="w-full text-sm min-w-[600px]">
                             <thead class="bg-gray-50 uppercase text-[10px] tracking-widest text-gray-500">
                                 <tr>
-                                    <th class="p-2 border" data-key="label_company">Company</th>
-                                    <th class="p-2 border" data-key="label_exp_pos">Position</th>
-                                    <th class="p-2 border" data-key="label_year_from">From</th>
-                                    <th class="p-2 border" data-key="label_year_to">To</th>
-                                    <th class="p-2 border" data-key="label_reason">Reason</th>
+                                    <th class="p-2 border text-left">Detail Pekerjaan & Posisi</th>
                                     <th class="p-2 border w-10"></th>
                                 </tr>
                             </thead>
@@ -333,10 +340,10 @@
                         <table id="table-sosial" class="w-full text-sm min-w-[500px]">
                             <thead class="bg-gray-50 uppercase text-[10px] tracking-widest text-gray-500">
                                 <tr>
-                                    <th class="p-2 border">Org</th>
-                                    <th class="p-2 border">Act</th>
-                                    <th class="p-2 border">Year</th>
-                                    <th class="p-2 border">Pos</th>
+                                    <th class="p-2 border" data-key="label_soc_org">Org</th>
+                                    <th class="p-2 border" data-key="label_soc_act">Act</th>
+                                    <th class="p-2 border" data-key="label_soc_year">Year</th>
+                                    <th class="p-2 border" data-key="label_soc_pos">Pos</th>
                                     <th class="p-2 border w-10"></th>
                                 </tr>
                             </thead>
@@ -370,7 +377,7 @@
                     <div class="space-y-1">
                         <label class="block text-sm font-semibold text-gray-700" data-key="label_join_date">When can you
                             start?</label>
-                        <input type="text" name="mulai" class="w-full border p-2 rounded">
+                        <input type="date" name="mulai" class="w-full border p-2 rounded bg-white" required>
                     </div>
                     <div class="space-y-1">
                         <label class="block text-sm font-semibold text-gray-700" data-key="label_social_media">Social
@@ -453,24 +460,31 @@
 
         <!-- FOOTER NAV -->
         <footer
-            class="fixed bottom-0 left-0 right-0 bg-white border-t p-4 z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-            <div class="max-w-5xl mx-auto flex justify-between gap-4">
-                <button id="btn-prev" onclick="changeStep(-1)" disabled
-                    class="flex-[1] px-6 py-3 rounded-xl font-bold border-2 border-gray-200 text-gray-500 opacity-50 disabled:cursor-not-allowed transition-all active:scale-95">
-                    <span data-key="btn_prev">Back</span>
-                </button>
-                <button id="btn-next" onclick="changeStep(1)"
-                    class="flex-[2] bg-gray-800 text-white px-6 py-3 rounded-xl font-bold hover:bg-gray-900 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2">
-                    <span data-key="btn_next">Next</span> <i class="fas fa-arrow-right text-xs"></i>
-                </button>
-                <button id="btn-download" onclick="generatePDF()"
-                    class="hidden flex-[2] bg-sika-red text-white px-6 py-3 rounded-xl font-bold hover:bg-red-700 transition-all shadow-lg active:scale-95 flex items-center justify-center gap-2">
-                    <i class="fas fa-file-pdf"></i> <span data-key="btn_download">Download PDF</span>
-                </button>
-                <button id="btn-email-direct" onclick="sendDirectEmail()"
-                    class="hidden flex-[2] bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg active:scale-95 flex items-center justify-center gap-2">
-                    <i class="fas fa-paper-plane"></i> <span data-key="btn_email_direct">Send Email</span>
-                </button>
+            class="fixed bottom-0 left-0 right-0 bg-white border-t p-3 z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+            <div class="max-w-5xl mx-auto flex flex-col gap-2">
+                <div class="flex justify-between gap-4">
+                    <button id="btn-prev" onclick="changeStep(-1)" disabled
+                        class="flex-[1] px-6 py-3 rounded-xl font-bold border-2 border-gray-200 text-gray-500 opacity-50 disabled:cursor-not-allowed transition-all active:scale-95">
+                        <span data-key="btn_prev">Back</span>
+                    </button>
+                    <button id="btn-next" onclick="changeStep(1)"
+                        class="flex-[2] bg-gray-800 text-white px-6 py-3 rounded-xl font-bold hover:bg-gray-900 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2">
+                        <span data-key="btn_next">Next</span> <i class="fas fa-arrow-right text-xs"></i>
+                    </button>
+                    <button id="btn-download" onclick="generatePDF()"
+                        class="hidden flex-[2] bg-sika-red text-white px-6 py-3 rounded-xl font-bold hover:bg-red-700 transition-all shadow-lg active:scale-95 flex items-center justify-center gap-2">
+                        <i class="fas fa-file-pdf"></i> <span data-key="btn_download">Download PDF</span>
+                    </button>
+                    <button id="btn-email-direct" onclick="sendDirectEmail()"
+                        class="hidden flex-[2] bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg active:scale-95 flex items-center justify-center gap-2">
+                        <i class="fas fa-paper-plane"></i> <span data-key="btn_email_direct">Send Email</span>
+                    </button>
+                </div>
+                <div class="text-center">
+                    <a id="global-privacy-link" href="#" target="_blank"
+                        class="text-[10px] text-gray-400 underline hover:text-gray-600 transition-colors">Privacy
+                        Notice</a>
+                </div>
             </div>
         </footer>
     </div>
@@ -478,7 +492,7 @@
     <!-- PDF TEMPLATE (Hidden) -->
     <div id="pdf-template" class="p-4" style="display:none;">
         <div class="flex justify-between items-start mb-4">
-            <img id="pdf-logo-img" src="assets/logo.png" style="height: 60px; width: auto;" alt="Logo">
+            <img id="pdf-logo-img" src="" style="height: 120px; width: auto;" alt="Logo">
             <div class="text-right">
                 <div class="font-bold text-lg" data-pdf-i18n="title">APLIKASI CALON KARYAWAN</div>
                 <div class="text-xs text-gray-500">Official Employment Application</div>
@@ -542,11 +556,11 @@
         <table id="pdf-table-pasangan" class="pdf-table">
             <thead>
                 <tr>
-                    <th>Nama</th>
-                    <th>Hub</th>
-                    <th>Lahir</th>
-                    <th>Sex</th>
-                    <th>Pend</th>
+                    <th data-pdf-i18n="pdf_th_name">Nama</th>
+                    <th data-pdf-i18n="pdf_th_rel">Hub</th>
+                    <th data-pdf-i18n="pdf_th_born">Lahir</th>
+                    <th data-pdf-i18n="pdf_th_sex">Sex</th>
+                    <th data-pdf-i18n="pdf_th_edu">Pend</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -554,9 +568,9 @@
         <table id="pdf-table-ortu" class="pdf-table">
             <thead>
                 <tr>
-                    <th>Nama</th>
-                    <th>Hub</th>
-                    <th>Pend</th>
+                    <th data-pdf-i18n="pdf_th_name">Nama</th>
+                    <th data-pdf-i18n="pdf_th_rel">Hub</th>
+                    <th data-pdf-i18n="pdf_th_edu">Pend</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -566,11 +580,11 @@
         <table id="pdf-table-pendidikan" class="pdf-table">
             <thead>
                 <tr>
-                    <th>Level</th>
-                    <th>Sekolah</th>
-                    <th>Dari</th>
-                    <th>Ke</th>
-                    <th>Jurusan</th>
+                    <th data-pdf-i18n="pdf_th_level">Level</th>
+                    <th data-pdf-i18n="pdf_th_inst">Sekolah</th>
+                    <th data-pdf-i18n="pdf_th_from">Dari</th>
+                    <th data-pdf-i18n="pdf_th_to">Ke</th>
+                    <th data-pdf-i18n="pdf_th_major">Jurusan</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -580,8 +594,8 @@
         <table id="pdf-table-bahasa" class="pdf-table">
             <thead>
                 <tr>
-                    <th>Bahasa</th>
-                    <th>Tingkat</th>
+                    <th data-pdf-i18n="pdf_th_lang">Bahasa</th>
+                    <th data-pdf-i18n="pdf_th_level">Tingkat</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -591,55 +605,59 @@
         <table id="pdf-table-kerja" class="pdf-table">
             <thead>
                 <tr>
-                    <th>Perusahaan</th>
-                    <th>Jabatan</th>
-                    <th>Dari</th>
-                    <th>Ke</th>
-                    <th>Alasan</th>
+                    <th data-pdf-i18n="pdf_th_comp">Perusahaan</th>
+                    <th data-pdf-i18n="pdf_th_pos">Jabatan</th>
+                    <th data-pdf-i18n="pdf_th_from">Dari</th>
+                    <th data-pdf-i18n="pdf_th_to">Ke</th>
+                    <th data-pdf-i18n="pdf_th_reason">Alasan</th>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
 
-        <div class="pdf-header-sect" data-pdf-i18n="pdf_header_social">KEGIATAN SOSIAL</div>
-        <table id="pdf-table-sosial" class="pdf-table">
+        <div class="pdf-header-sect" data-pdf-i18n="pdf_header_social" style="page-break-before: auto;">KEGIATAN SOSIAL
+        </div>
+        <table id="pdf-table-sosial" class="pdf-table" style="page-break-inside: auto;">
             <thead>
                 <tr>
-                    <th>Org</th>
-                    <th>Act</th>
-                    <th>Year</th>
-                    <th>Pos</th>
+                    <th data-pdf-i18n="pdf_th_org">Org</th>
+                    <th data-pdf-i18n="pdf_th_act">Act</th>
+                    <th data-pdf-i18n="pdf_th_year">Year</th>
+                    <th data-pdf-i18n="pdf_th_pos">Pos</th>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
 
-        <div class="pdf-header-sect" data-pdf-i18n="step5_title">LAIN-LAIN</div>
-        <table class="pdf-table">
-            <tr>
-                <td width="20%" class="font-bold" data-pdf-i18n="label_reference">Referensi</td>
-                <td colspan="3">
-                    <table id="pdf-table-referensi" class="w-full text-[9px]">
-                        <thead>
-                            <tr>
-                                <th>Nama</th>
-                                <th>Hub</th>
-                                <th>Phone</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td class="font-bold" data-pdf-i18n="label_emergency">Kontak Darurat</td>
-                <td data-pdf="darurat"></td>
-                <td width="15%" class="font-bold" data-pdf-i18n="label_join_date">Mulai</td>
-                <td data-pdf="mulai"></td>
-            </tr>
-        </table>
+        <div style="page-break-inside: avoid;">
+            <div class="pdf-header-sect" data-pdf-i18n="step5_title" style="page-break-before: auto;">LAIN-LAIN</div>
+            <table class="pdf-table" style="page-break-inside: auto;">
+                <tr>
+                    <td width="20%" class="font-bold" data-pdf-i18n="label_reference">Referensi</td>
+                    <td colspan="3">
+                        <table id="pdf-table-referensi" class="w-full text-[9px]">
+                            <thead>
+                                <tr>
+                                    <th data-pdf-i18n="pdf_th_name">Nama</th>
+                                    <th data-pdf-i18n="pdf_th_rel">Hub</th>
+                                    <th data-pdf-i18n="pdf_th_phone">Phone</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-bold" data-pdf-i18n="label_emergency">Kontak Darurat</td>
+                    <td data-pdf="darurat"></td>
+                    <td width="15%" class="font-bold" data-pdf-i18n="label_join_date">Mulai</td>
+                    <td data-pdf="mulai"></td>
+                </tr>
+            </table>
+        </div>
 
-        <div class="mt-4 p-2 border bg-gray-50 text-[9px] italic">
+        <div class="mt-4 p-2 border bg-gray-50 text-[9px] italic"
+            style="page-break-inside: avoid; break-inside: avoid;">
             <span data-pdf-i18n="pdf_declaration_text"></span>
             <div class="mt-2 font-bold" data-pdf-i18n="pdf_digital_sign"></div>
         </div>
@@ -665,6 +683,7 @@
     </div>
 
     <!-- SCRIPTS -->
+    <script src="js/logo.js"></script>
     <script src="js/scripts.js"></script>
 </body>
 

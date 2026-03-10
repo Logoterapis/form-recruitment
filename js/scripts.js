@@ -1,4 +1,8 @@
 // i18n Data
+const famOptions = {
+    id: ["Suami", "Istri", "Anak"],
+    en: ["Husband", "Wife", "Child"]
+};
 const i18n = {
     id: {
         title: "Aplikasi Calon Karyawan",
@@ -18,7 +22,8 @@ const i18n = {
         step5_title: "Informasi Tambahan",
         step6_title: "Selesai",
         label_name: "Nama Lengkap (Sesuai KTP)",
-        label_dob: "Tempat, Tanggal Lahir",
+        label_pob: "Tempat Lahir",
+        label_dob: "Tanggal Lahir",
         label_gender: "Jenis Kelamin",
         label_marital: "Status Kawin",
         label_address: "Alamat Lengkap",
@@ -31,8 +36,6 @@ const i18n = {
         label_sim: "SIM yang Dimiliki",
         label_sim_none: "Tidak Ada",
         label_social_media: "Akun Sosial Media (IG/LinkedIn)",
-        label_weight: "Berat Badan (kg)",
-        label_height: "Tinggi Badan (cm)",
         label_blood: "Golongan Darah",
         label_fam_member: "Anggota Keluarga (Pasangan & Anak)",
         label_ortu: "Orang Tua & Saudara Kandung",
@@ -63,7 +66,44 @@ const i18n = {
         pdf_header_exp: "PENGALAMAN KERJA",
         pdf_header_social: "KEGIATAN SOSIAL",
         pdf_declaration_text: "Saya menyatakan bahwa informasi dalam lamaran ini adalah benar dan lengkap. Saya memberi wewenang kepada perusahaan untuk memverifikasi informasi yang diberikan.",
-        pdf_digital_sign: "DISETUJUI SECARA DIGITAL"
+        pdf_digital_sign: "DISETUJUI SECARA DIGITAL",
+        label_fam_name: "Nama",
+        label_fam_rel: "Hubungan",
+        label_fam_dob: "Lahir",
+        label_fam_sex: "Gender",
+        label_fam_edu: "Pendidikan",
+        label_par_name: "Nama",
+        label_par_rel: "Hubungan",
+        label_par_edu: "Pendidikan",
+        label_exp_comp: "Perusahaan",
+        label_exp_pos: "Jabatan",
+        label_exp_from: "Dari (Bulan)",
+        label_exp_to: "Sampai (Bulan)",
+        label_exp_reason: "Alasan Berhenti",
+        label_exp_task: "Tugas & Tanggung Jawab",
+        label_soc_org: "Organisasi",
+        label_soc_act: "Kegiatan",
+        label_soc_year: "Tahun",
+        label_soc_pos: "Jabatan",
+        pdf_th_name: "Nama",
+        pdf_th_rel: "Hubungan",
+        pdf_th_phone: "No. HP",
+        pdf_th_born: "Lahir",
+        pdf_th_sex: "Kelamin",
+        pdf_th_edu: "Pend.",
+        pdf_th_level: "Tingkat",
+        pdf_th_inst: "Institusi",
+        pdf_th_from: "Dari",
+        pdf_th_to: "Sampai",
+        pdf_th_major: "Jurusan",
+        pdf_th_lang: "Bahasa",
+        pdf_th_comp: "Perusahaan",
+        pdf_th_pos: "Jabatan",
+        pdf_th_reason: "Alasan",
+        pdf_th_org: "Organisasi",
+        pdf_th_act: "Kegiatan",
+        pdf_th_year: "Tahun",
+        pdf_th_task: "Tugas & Tanggung Jawab"
     },
     en: {
         title: "Employee Application",
@@ -83,7 +123,8 @@ const i18n = {
         step5_title: "Additional Info",
         step6_title: "Completion",
         label_name: "Full Name (as per ID)",
-        label_dob: "Place, Date of Birth",
+        label_pob: "Place of Birth",
+        label_dob: "Date of Birth",
         label_gender: "Gender",
         label_marital: "Marital Status",
         label_address: "Full Address",
@@ -96,8 +137,6 @@ const i18n = {
         label_sim: "Driving License (SIM)",
         label_sim_none: "None",
         label_social_media: "Social Media (IG/LinkedIn)",
-        label_weight: "Weight (kg)",
-        label_height: "Height (cm)",
         label_blood: "Blood Type",
         label_fam_member: "Family Members (Spouse & Children)",
         label_ortu: "Parents & Siblings",
@@ -128,7 +167,44 @@ const i18n = {
         pdf_header_exp: "WORK EXPERIENCE",
         pdf_header_social: "SOCIAL ACTIVITIES",
         pdf_declaration_text: "I certify that the information contained in this application is true and complete. I authorize the company to verify any information provided.",
-        pdf_digital_sign: "DIGITALLY CHECKED & AGREED"
+        pdf_digital_sign: "DIGITALLY CHECKED & AGREED",
+        label_fam_name: "Name",
+        label_fam_rel: "Relation",
+        label_fam_dob: "Born",
+        label_fam_sex: "Gender",
+        label_fam_edu: "Education",
+        label_par_name: "Name",
+        label_par_rel: "Relation",
+        label_par_edu: "Education",
+        label_exp_comp: "Company",
+        label_exp_pos: "Position",
+        label_exp_from: "From (Month)",
+        label_exp_to: "To (Month)",
+        label_exp_reason: "Reason for Leaving",
+        label_exp_task: "Tasks & Responsibilities",
+        label_soc_org: "Organization",
+        label_soc_act: "Activity",
+        label_soc_year: "Year",
+        label_soc_pos: "Position",
+        pdf_th_name: "Name",
+        pdf_th_rel: "Relation",
+        pdf_th_phone: "Phone No.",
+        pdf_th_born: "Born",
+        pdf_th_sex: "Gender",
+        pdf_th_edu: "Edu.",
+        pdf_th_level: "Level",
+        pdf_th_inst: "Institution",
+        pdf_th_from: "From",
+        pdf_th_to: "To",
+        pdf_th_major: "Major",
+        pdf_th_lang: "Language",
+        pdf_th_comp: "Company",
+        pdf_th_pos: "Position",
+        pdf_th_reason: "Reason",
+        pdf_th_org: "Organization",
+        pdf_th_act: "Activity",
+        pdf_th_year: "Year",
+        pdf_th_task: "Tasks & Responsibilities"
     }
 };
 
@@ -258,12 +334,14 @@ function setLanguage(lang) {
     });
 
     const privacyLink = document.getElementById('privacy-link');
-    if (privacyLink) {
-        if (lang === 'id') {
-            privacyLink.href = 'https://idn.sika.com/in/Pemberitahuan-Perlindungan.html'; privacyLink.innerText = 'Pemberitahuan Perlindungan Data';
-        } else {
-            privacyLink.href = 'https://idn.sika.com/en/privacy-notice.html'; privacyLink.innerText = 'Privacy Notice';
-        }
+    const globalPrivacyLink = document.getElementById('global-privacy-link');
+
+    if (lang === 'id') {
+        if (privacyLink) { privacyLink.href = 'https://idn.sika.com/in/Pemberitahuan-Perlindungan.html'; privacyLink.innerText = 'Pemberitahuan Perlindungan Data'; }
+        if (globalPrivacyLink) { globalPrivacyLink.href = 'https://idn.sika.com/in/Pemberitahuan-Perlindungan.html'; globalPrivacyLink.innerText = 'Pemberitahuan Perlindungan Data'; }
+    } else {
+        if (privacyLink) { privacyLink.href = 'https://idn.sika.com/en/privacy-notice.html'; privacyLink.innerText = 'Privacy Notice'; }
+        if (globalPrivacyLink) { globalPrivacyLink.href = 'https://idn.sika.com/en/privacy-notice.html'; globalPrivacyLink.innerText = 'Privacy Notice'; }
     }
 
     const labels = lang === 'id' ? ['Pribadi', 'Keluarga', 'Pend.', 'Kerja', 'Info', 'Done'] : ['Personal', 'Family', 'Edu', 'Exp', 'Info', 'Done'];
@@ -272,6 +350,13 @@ function setLanguage(lang) {
 
     renderOptions();
     updateUI();
+}
+
+function showWelcomeScreen() {
+    const welcome = document.getElementById('welcome-screen');
+    const container = document.getElementById('app-container');
+    if (welcome) welcome.style.display = 'flex';
+    if (container) container.classList.add('hidden');
 }
 
 function changeStep(n) {
@@ -342,15 +427,35 @@ function addRow(tableId, defaultVal = '') {
     const tr = document.createElement('tr');
     let cols = '';
     if (tableId === 'table-pasangan') {
-        cols = `<td><input class="w-full border p-2 rounded" name="fam_name[]"></td><td><select class="w-full border p-2 rounded" name="fam_rel[]"><option value="Suami">Suami / Husband</option><option value="Istri">Istri / Wife</option><option value="Anak">Anak / Child</option></select></td><td><input type="date" class="w-full border p-2 rounded bg-white" name="fam_dob[]"></td><td><select class="w-full border p-2 rounded bg-white" name="fam_sex[]">${genderOptions[currentLang].map(o => `<option>${o}</option>`).join('')}</select></td><td><select class="w-full border p-2 rounded" name="fam_edu[]">${generateOptions(eduOptions)}</select></td>`;
+        const fOpts = famOptions[currentLang].map(o => `<option value="${o}">${o}</option>`).join('');
+        cols = `<td><input class="w-full border p-2 rounded" name="fam_name[]"></td><td><select class="w-full border p-2 rounded" name="fam_rel[]">${fOpts}</select></td><td><input type="date" class="w-full border p-2 rounded bg-white" name="fam_dob[]"></td><td><select class="w-full border p-2 rounded bg-white" name="fam_sex[]">${genderOptions[currentLang].map(o => `<option>${o}</option>`).join('')}</select></td><td><select class="w-full border p-2 rounded" name="fam_edu[]">${generateOptions(eduOptions)}</select></td>`;
     } else if (tableId === 'table-ortu') {
         cols = `<td><input class="w-full border p-2 rounded" name="par_name[]"></td><td><select class="w-full border p-2 rounded" name="par_rel[]">${generateOptions(relOptions[currentLang])}</select></td><td><select class="w-full border p-2 rounded" name="par_edu[]">${generateOptions(eduOptions)}</select></td>`;
     } else if (tableId === 'table-pendidikan') {
-        cols = `<td><select class="w-24 border p-2 rounded" name="edu_level[]">${generateOptions(mainEduOptions)}</select></td><td><input class="w-full border p-2 rounded" name="edu_school[]"></td><td><input class="w-full border p-2 rounded w-20" name="edu_from[]" type="number" placeholder="Year"></td><td><input class="w-full border p-2 rounded w-20" name="edu_to[]" type="number" placeholder="Year"></td><td><input class="w-full border p-2 rounded" name="edu_major[]"></td>`;
+        cols = `<td><select class="w-24 border p-2 rounded" name="edu_level[]">${generateOptions(mainEduOptions)}</select></td><td><input class="w-full border p-2 rounded" name="edu_school[]"></td><td><input class="w-full border p-2 rounded w-32" name="edu_from[]" type="month"></td><td><input class="w-full border p-2 rounded w-32" name="edu_to[]" type="month"></td><td><input class="w-full border p-2 rounded" name="edu_major[]"></td>`;
     } else if (tableId === 'table-bahasa') {
         cols = `<td><input class="w-full border p-2 rounded" name="lang_name[]" value="${defaultVal}"></td><td><select class="w-full border p-2 rounded" name="lang_level[]">${generateOptions(langLevelOptions[currentLang])}</select></td>`;
     } else if (tableId === 'table-kerja') {
-        cols = `<td><input class="w-full border p-2 rounded" name="exp_comp[]"></td><td><input class="w-full border p-2 rounded" name="exp_pos[]"></td><td><input class="w-full border p-2 rounded w-20" name="exp_from[]" type="number" placeholder="Year"></td><td><input class="w-full border p-2 rounded w-20" name="exp_to[]" type="number" placeholder="Year"></td><td><input class="w-full border p-2 rounded" name="exp_reason[]"></td>`;
+        const lComp = i18n[currentLang]['label_exp_comp'];
+        const lPos = i18n[currentLang]['label_exp_pos'];
+        const lFrom = i18n[currentLang]['label_exp_from'];
+        const lTo = i18n[currentLang]['label_exp_to'];
+        const lReason = i18n[currentLang]['label_exp_reason'];
+        const lTask = i18n[currentLang]['label_exp_task'];
+
+        cols = `
+        <td colspan="5" class="p-0 border-0">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 mb-2">
+                <div class="flex flex-col"><label class="text-[10px] text-gray-500 font-bold ml-1 uppercase">${lComp}</label><input class="w-full border p-2 rounded" name="exp_comp[]"></div>
+                <div class="flex flex-col"><label class="text-[10px] text-gray-500 font-bold ml-1 uppercase">${lPos}</label><input class="w-full border p-2 rounded" name="exp_pos[]"></div>
+                <div class="flex flex-col"><label class="text-[10px] text-gray-500 font-bold ml-1 uppercase">${lFrom}</label><input class="w-full border p-2 rounded" name="exp_from[]" type="month"></div>
+                <div class="flex flex-col"><label class="text-[10px] text-gray-500 font-bold ml-1 uppercase">${lTo}</label><input class="w-full border p-2 rounded" name="exp_to[]" type="month"></div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 mb-2">
+                <div class="flex flex-col"><label class="text-[10px] text-gray-500 font-bold ml-1 uppercase">${lReason}</label><input class="w-full border p-2 rounded" name="exp_reason[]"></div>
+                <div class="flex flex-col"><label class="text-[10px] text-gray-500 font-bold ml-1 uppercase">${lTask}</label><textarea class="w-full border p-2 rounded min-h-[60px] resize-y" name="exp_task[]" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'"></textarea></div>
+            </div>
+        </td>`;
     } else if (tableId === 'table-sosial') {
         cols = `<td><input class="w-full border p-2 rounded" name="soc_org[]"></td><td><input class="w-full border p-2 rounded" name="soc_act[]"></td><td><input class="w-full border p-2 rounded w-20" name="soc_year[]" type="number" placeholder="Year"></td><td><input class="w-full border p-2 rounded" name="soc_pos[]"></td>`;
     } else if (tableId === 'table-referensi') {
@@ -369,6 +474,13 @@ function generatePDF() {
         const key = el.getAttribute('data-pdf-i18n');
         if (i18n[currentLang][key]) el.innerText = i18n[currentLang][key];
     });
+
+    // Set PDF Logo to Base64 to prevent Tainted Canvas error
+    const pdfLogo = document.getElementById('pdf-logo-img');
+    if (pdfLogo) {
+        pdfLogo.src = customLogoData ? customLogoData : (typeof SIKA_LOGO_BASE64 !== 'undefined' ? SIKA_LOGO_BASE64 : '');
+    }
+
     const name = document.querySelector('[name="nama"]').value || "Candidate";
     const pdfPhoto = document.getElementById('pdf-photo-img');
     if (uploadedPhotoData) { pdfPhoto.src = uploadedPhotoData; pdfPhoto.style.display = 'block'; } else { pdfPhoto.style.display = 'none'; }
@@ -380,11 +492,27 @@ function generatePDF() {
     const pdfMarital = document.querySelector('[data-pdf="status_kawin"]');
     if (pdfMarital) pdfMarital.innerText = document.getElementById('marital-select').value;
 
+    const tmpPob = document.querySelector('[name="tmp_lahir"]');
+    const tglLahir = document.querySelector('[name="tgl_lahir"]');
+    const pdfTtl = document.querySelector('[data-pdf="ttl"]');
+    if (pdfTtl) {
+        let ttlStr = "";
+        if (tmpPob && tmpPob.value) ttlStr += tmpPob.value;
+        if (tglLahir && tglLahir.value) ttlStr += (ttlStr ? ", " : "") + tglLahir.value.split('-').reverse().join('-');
+        pdfTtl.innerText = ttlStr;
+    }
+
     document.querySelectorAll('[data-pdf]').forEach(el => {
         const key = el.getAttribute('data-pdf');
         const input = document.querySelector(`[name="${key}"]`);
-        if (input && key !== 'status_kawin') el.innerText = input.value;
+        if (input && key !== 'status_kawin' && key !== 'ttl' && key !== 'mulai') el.innerText = input.value;
     });
+
+    const mulaiDate = document.querySelector('[name="mulai"]');
+    const pdfMulai = document.querySelector('[data-pdf="mulai"]');
+    if (mulaiDate && pdfMulai && mulaiDate.value) {
+        pdfMulai.innerText = mulaiDate.value.split('-').reverse().join('-');
+    }
 
     ['pasangan', 'ortu', 'pendidikan', 'bahasa', 'kerja', 'sosial', 'referensi'].forEach(t => { copyTableToPDF(`table-${t}`, `pdf-table-${t}`); });
 
@@ -395,7 +523,7 @@ function generatePDF() {
         margin: [5, 10, 10, 10],
         filename: `Sika_App_${name.replace(/\s+/g, '_')}.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true, allowTaint: true, logging: false },
+        html2canvas: { scale: 2, useCORS: true, logging: false },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { mode: ['css', 'legacy'] }
     };
@@ -431,6 +559,11 @@ function copyTableToPDF(srcId, destId) {
     const destTable = document.getElementById(destId);
     if (!srcTable || !destTable) return;
 
+    if (srcId === 'table-kerja') {
+        copyExpTableToPDF(srcTable, destTable);
+        return;
+    }
+
     const srcRows = srcTable.querySelectorAll('tbody tr');
     const destBody = destTable.querySelector('tbody');
     destBody.innerHTML = '';
@@ -448,6 +581,48 @@ function copyTableToPDF(srcId, destId) {
                 tr.appendChild(td);
             });
             destBody.appendChild(tr);
+        }
+    });
+}
+
+function copyExpTableToPDF(srcTable, destTable) {
+    const srcRows = srcTable.querySelectorAll('tbody > tr');
+    const destBody = destTable.querySelector('tbody');
+    destBody.innerHTML = '';
+
+    srcRows.forEach(row => {
+        const comp = row.querySelector('[name="exp_comp[]"]');
+        const pos = row.querySelector('[name="exp_pos[]"]');
+        const from = row.querySelector('[name="exp_from[]"]');
+        const to = row.querySelector('[name="exp_to[]"]');
+        const reason = row.querySelector('[name="exp_reason[]"]');
+        const task = row.querySelector('[name="exp_task[]"]');
+
+        if (comp && comp.value) {
+            const tr1 = document.createElement('tr');
+            tr1.style.pageBreakInside = "avoid";
+
+            tr1.innerHTML = `
+                <td class="font-bold">${comp.value}</td>
+                <td>${pos ? pos.value : ''}</td>
+                <td>${from && from.value ? from.value : ''}</td>
+                <td>${to && to.value ? to.value : ''}</td>
+                <td>${reason ? reason.value : ''}</td>
+            `;
+            destBody.appendChild(tr1);
+
+            if (task && task.value) {
+                const tr2 = document.createElement('tr');
+                tr2.style.pageBreakInside = "avoid";
+                const labelTask = i18n[currentLang]['pdf_th_task'] || "Tugas & Tanggung Jawab";
+                tr2.innerHTML = `
+                    <td colspan="5" class="text-left bg-gray-50 italic text-[10px]">
+                        <span class="font-bold text-gray-700">${labelTask}:</span><br/>
+                        ${task.value.replace(/\n/g, '<br/>')}
+                    </td>
+                `;
+                destBody.appendChild(tr2);
+            }
         }
     });
 }
